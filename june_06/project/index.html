@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanto Pokédex</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="pokedex">
+
+    <!-- Left Panel -->
+    <div class="panel panel-left">
+      <div class="panel-top-bar">
+        <div class="top-light big-light"></div>
+        <div class="top-lights-small">
+          <div class="top-light small-light red"></div>
+          <div class="top-light small-light yellow"></div>
+          <div class="top-light small-light green"></div>
+        </div>
+      </div>
+
+      <div class="screen-container left-screen-container">
+        <div class="screen-bezel">
+          <div class="screen sprite-screen" id="spriteScreen">
+            <div class="sprite-wrapper" id="spriteWrapper">
+              <div class="pokeball-idle">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="pokeball" id="idleBall" />
+              </div>
+            </div>
+            <div class="sprite-number" id="spriteNumber">#---</div>
+          </div>
+        </div>
+        <div class="screen-label">PLAYER</div>
+      </div>
+
+      <div class="left-controls">
+        <div class="dpad">
+          <div class="dpad-row">
+            <div class="dpad-btn dpad-up" id="dpadUp">▲</div>
+          </div>
+          <div class="dpad-row mid">
+            <div class="dpad-btn dpad-left" id="dpadLeft">◀</div>
+            <div class="dpad-center"></div>
+            <div class="dpad-btn dpad-right" id="dpadRight">▶</div>
+          </div>
+          <div class="dpad-row">
+            <div class="dpad-btn dpad-down" id="dpadDown">▼</div>
+          </div>
+        </div>
+
+        <div class="left-small-screen-wrap">
+          <div class="small-screen" id="statusScreen">
+            <span id="statusText">Select a Pokémon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hinge"></div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="panel panel-right">
+      <div class="panel-right-top">
+        <div class="right-screen-container">
+          <div class="screen-bezel right-bezel">
+            <div class="screen detail-screen" id="detailScreen">
+              <div class="detail-idle" id="detailIdle">
+                <p class="idle-title">KANTO</p>
+                <p class="idle-sub">POKÉDEX</p>
+                <p class="idle-hint">← Select a Pokémon</p>
+              </div>
+              <div class="detail-content hidden" id="detailContent">
+                <div class="detail-header">
+                  <span class="detail-name" id="detailName">---</span>
+                  <span class="detail-id" id="detailId">#000</span>
+                </div>
+                <div class="detail-types" id="detailTypes"></div>
+                <div class="detail-stats" id="detailStats"></div>
+                <div class="detail-desc" id="detailDesc"></div>
+                <div class="detail-meta" id="detailMeta"></div>
+              </div>
+              <div class="loading-overlay hidden" id="loadingOverlay">
+                <div class="loading-dots">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-container">
+        <div class="list-header">
+          <span>No.</span>
+          <span>Name</span>
+          <span>Type</span>
+        </div>
+        <ul class="pokemon-list" id="pokemonList"></ul>
+      </div>
+
+      <div class="right-controls">
+        <div class="right-buttons">
+          <button class="action-btn btn-a" id="btnA">A</button>
+          <button class="action-btn btn-b" id="btnB">B</button>
+        </div>
+        <div class="speaker-grille">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
