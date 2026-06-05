@@ -1,0 +1,135 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: http://localhost:8000/#franciscos-dev-journey
+  - banner [ref=e3]:
+    - navigation "Header" [ref=e4]:
+      - img [ref=e6] [cursor=pointer]
+      - generic [ref=e9]:
+        - generic [ref=e11]: Francisco's Dev Journey
+        - generic:
+          - generic: Home
+      - dialog [ref=e12]:
+        - search [ref=e13]:
+          - generic [ref=e14]:
+            - textbox "Search" [ref=e15]
+            - generic:
+              - img
+            - navigation "Search":
+              - button "Clear":
+                - img
+          - generic [ref=e17]: Initializing search
+  - generic [ref=e18]:
+    - main [ref=e19]:
+      - generic [ref=e20]:
+        - navigation "Navigation" [ref=e23]:
+          - generic [ref=e24] [cursor=pointer]:
+            - link "Francisco's Dev Journey" [ref=e25]:
+              - /url: http://localhost:8000/
+              - img [ref=e26]
+            - text: Francisco's Dev Journey
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - generic [ref=e31]: Home
+              - navigation "Table of contents" [ref=e33]:
+                - generic [ref=e34] [cursor=pointer]: Table of contents
+                - list [ref=e35]:
+                  - listitem [ref=e36]:
+                    - link "What to Expect" [ref=e37] [cursor=pointer]:
+                      - /url: http://localhost:8000/#what-to-expect
+                      - generic [ref=e38]: What to Expect
+                  - listitem [ref=e39]:
+                    - link "Week 1 — The Foundation" [ref=e40] [cursor=pointer]:
+                      - /url: http://localhost:8000/#week-1-the-foundation
+                      - generic [ref=e41]: Week 1 — The Foundation
+            - listitem [ref=e42]:
+              - generic [ref=e44]: Week 1 — The Foundation
+              - navigation "Week 1 — The Foundation" [ref=e46]:
+                - generic [ref=e47] [cursor=pointer]: Week 1 — The Foundation
+                - list [ref=e49]:
+                  - listitem [ref=e50]:
+                    - link "Day 1 · Installfest" [ref=e51] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-01/
+                      - generic [ref=e52]: Day 1 · Installfest
+                  - listitem [ref=e53]:
+                    - link "Day 2 · Git & Github" [ref=e54] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-02/
+                      - generic [ref=e55]: Day 2 · Git & Github
+                  - listitem [ref=e56]:
+                    - link "Day 3 · Working with LLMs" [ref=e57] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-03/
+                      - generic [ref=e58]: Day 3 · Working with LLMs
+                  - listitem [ref=e59]:
+                    - link "Day 4 · The Agent Loop" [ref=e60] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-04/
+                      - generic [ref=e61]: Day 4 · The Agent Loop
+                  - listitem [ref=e62]:
+                    - link "Day 5 · MCP Servers" [ref=e63] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-05/
+                      - generic [ref=e64]: Day 5 · MCP Servers
+            - listitem [ref=e65]:
+              - link "About" [ref=e66] [cursor=pointer]:
+                - /url: http://localhost:8000/about/
+                - generic [ref=e67]: About
+        - article [ref=e69]:
+          - heading "Francisco's Dev Journey" [level=1] [ref=e70]
+          - paragraph [ref=e71]: Welcome! This is my personal blog where I document the highs, the confusion, and the breakthroughs of becoming a Full-Stack Developer from scratch.
+          - paragraph [ref=e72]: I'm currently enrolled in a full-stack software engineering program, and every week I'll be writing about what I learned, what broke, and what finally clicked. Think of it as a learning journal — raw, honest, and hopefully useful to anyone else on a similar path.
+          - separator [ref=e73]
+          - heading "What to Expect" [level=2] [ref=e74]
+          - paragraph [ref=e75]: "Each post follows a simple format:"
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - strong [ref=e78]: Date
+              - text: — when it happened
+            - listitem [ref=e79]:
+              - strong [ref=e80]: Title
+              - text: — what the day was about
+            - listitem [ref=e81]:
+              - strong [ref=e82]: Body
+              - text: — my honest take on it
+          - paragraph [ref=e83]: Posts are organized by week so you can follow along from the beginning or jump to whatever's relevant to you.
+          - separator [ref=e84]
+          - heading "Week 1 — The Foundation" [level=2] [ref=e85]
+          - paragraph [ref=e86]: The first week was all about getting set up and building the mental models that everything else will rest on.
+          - table [ref=e89]:
+            - rowgroup [ref=e90]:
+              - row "Day Topic" [ref=e91]:
+                - columnheader "Day" [ref=e92]
+                - columnheader "Topic" [ref=e93]
+            - rowgroup [ref=e94]:
+              - row "Day 1 Machine Setup" [ref=e95]:
+                - cell "Day 1" [ref=e96]:
+                  - link "Day 1" [ref=e97] [cursor=pointer]:
+                    - /url: http://localhost:8000/posts/week1/day-01/
+                - cell "Machine Setup" [ref=e98]
+              - row "Day 2 Git & Github" [ref=e99]:
+                - cell "Day 2" [ref=e100]:
+                  - link "Day 2" [ref=e101] [cursor=pointer]:
+                    - /url: http://localhost:8000/posts/week1/day-02/
+                - cell "Git & Github" [ref=e102]
+              - row "Day 3 Working with LLMs" [ref=e103]:
+                - cell "Day 3" [ref=e104]:
+                  - link "Day 3" [ref=e105] [cursor=pointer]:
+                    - /url: http://localhost:8000/posts/week1/day-03/
+                - cell "Working with LLMs" [ref=e106]
+              - row "Day 4 Understanding the Agent Loop & Claude Code" [ref=e107]:
+                - cell "Day 4" [ref=e108]:
+                  - link "Day 4" [ref=e109] [cursor=pointer]:
+                    - /url: http://localhost:8000/posts/week1/day-04/
+                - cell "Understanding the Agent Loop & Claude Code" [ref=e110]
+              - row "Day 5 Handling Context & MCP Servers" [ref=e111]:
+                - cell "Day 5" [ref=e112]:
+                  - link "Day 5" [ref=e113] [cursor=pointer]:
+                    - /url: http://localhost:8000/posts/week1/day-05/
+                - cell "Handling Context & MCP Servers" [ref=e114]
+          - separator [ref=e115]
+          - paragraph [ref=e116]:
+            - emphasis [ref=e117]: More weeks to come as the journey continues.
+      - button "Back to top":
+        - img
+        - text: Back to top
+    - contentinfo [ref=e118]:
+      - generic [ref=e121]:
+        - text: Made with
+        - link "Material for MkDocs" [ref=e122] [cursor=pointer]:
+          - /url: https://squidfunk.github.io/mkdocs-material/

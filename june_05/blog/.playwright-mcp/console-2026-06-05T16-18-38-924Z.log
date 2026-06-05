@@ -1,0 +1,5 @@
+[     357ms] [LOG] Enabled live reload @ http://localhost:8000/:703
+[  378238ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8000/stylesheets/extra.css:0
+[  378396ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8000/stylesheets/extra.css:0
+[  378398ms] [LOG] Enabled live reload @ http://localhost:8000/:705
+[  399300ms] [LOG] Enabled live reload @ http://localhost:8000/:705

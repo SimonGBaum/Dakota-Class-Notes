@@ -1,0 +1,194 @@
+/* ── Root color tokens ── */
+:root {
+  --md-primary-fg-color: #0d0d0d;
+  --md-primary-fg-color--light: #1a1a1a;
+  --md-primary-fg-color--dark: #000000;
+  --md-accent-fg-color: #cc0000;
+  --md-typeset-a-color: #ffd700;
+}
+
+/* ── Header ── */
+.md-header {
+  background: #0d0d0d !important;
+  border-bottom: 2px solid #cc0000;
+}
+
+.md-header__title {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffd700 !important;
+}
+
+/* ── Navigation tabs ── */
+.md-tabs {
+  background: #111 !important;
+  border-bottom: 1px solid #ffd700;
+}
+
+.md-tabs__link {
+  color: #ccc !important;
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: #ffd700 !important;
+}
+
+/* ── Sidebar nav ── */
+.md-nav__title {
+  color: #cc0000 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+}
+
+.md-nav__link {
+  color: #aaa !important;
+}
+
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: #ffd700 !important;
+}
+
+/* ── Main background ── */
+.md-main {
+  background: #0d0d0d;
+}
+
+.md-main__inner {
+  background: #0d0d0d;
+}
+
+/* ── Content area ── */
+.md-content__inner {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(204, 0, 0, 0.15);
+}
+
+/* ── Headings ── */
+.md-typeset h1 {
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-left: 4px solid #cc0000;
+  padding-left: 14px;
+  font-size: 1.6rem;
+}
+
+.md-typeset h2 {
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-left: 3px solid #cc0000;
+  padding-left: 10px;
+  font-size: 1.2rem;
+}
+
+.md-typeset h3 {
+  color: #cc0000;
+  letter-spacing: 1px;
+}
+
+/* ── Links ── */
+.md-typeset a {
+  color: #ffd700 !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  transition: border-color 0.2s;
+}
+
+.md-typeset a:hover {
+  border-bottom-color: #ffd700;
+}
+
+/* ── Tables ── */
+.md-typeset table:not([class]) {
+  border: 1px solid #ffd700;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) th {
+  background: #cc0000;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #990000;
+}
+
+.md-typeset table:not([class]) td {
+  border: 1px solid #2a2a2a;
+  color: #ccc;
+  padding: 0.5rem 1rem;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: #1a1a1a;
+  color: #ffd700;
+}
+
+/* ── Inline & block code ── */
+.md-typeset code {
+  color: #ffd700;
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 2px;
+  padding: 0.1em 0.4em;
+}
+
+.md-typeset pre > code {
+  background: #0a0a0a;
+  border: 1px solid #cc0000;
+  border-left: 4px solid #cc0000;
+  border-radius: 0;
+}
+
+/* ── Blockquotes ── */
+.md-typeset blockquote {
+  border-left: 4px solid #ffd700;
+  background: #0d0d0d;
+  color: #aaa;
+}
+
+/* ── Body text ── */
+.md-typeset {
+  color: #ccc;
+}
+
+.md-typeset strong {
+  color: #fff;
+}
+
+.md-typeset em {
+  color: #ffd700;
+}
+
+/* ── Footer ── */
+.md-footer {
+  background: #000 !important;
+  border-top: 2px solid #cc0000;
+}
+
+.md-footer-meta {
+  background: #000 !important;
+}
+
+/* ── Search ── */
+.md-search__input {
+  background: #1a1a1a;
+  color: #ffd700;
+  border: 1px solid #cc0000;
+}
+
+.md-search__input::placeholder {
+  color: #666;
+}

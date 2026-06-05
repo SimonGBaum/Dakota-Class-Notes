@@ -1,0 +1,116 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: http://localhost:8000/posts/week1/day-01/#week-1-the-foundation
+  - banner [ref=e3]:
+    - navigation "Header" [ref=e4]:
+      - img [ref=e6] [cursor=pointer]
+      - generic [ref=e9]:
+        - generic [ref=e11]: Francisco's Dev Journey
+        - generic:
+          - generic: Day 1 · Installfest
+      - dialog [ref=e12]:
+        - search [ref=e13]:
+          - generic [ref=e14]:
+            - textbox "Search" [ref=e15]
+            - generic:
+              - img
+            - navigation "Search":
+              - button "Clear":
+                - img
+          - generic [ref=e17]: Initializing search
+  - generic [ref=e18]:
+    - main [ref=e19]:
+      - generic [ref=e20]:
+        - navigation "Navigation" [ref=e23]:
+          - generic [ref=e24] [cursor=pointer]:
+            - link "Francisco's Dev Journey" [ref=e25]:
+              - /url: http://localhost:8000/
+              - img [ref=e26]
+            - text: Francisco's Dev Journey
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - link "Home" [ref=e30] [cursor=pointer]:
+                - /url: http://localhost:8000/
+                - generic [ref=e31]: Home
+            - listitem [ref=e32]:
+              - generic [ref=e34]: Week 1 — The Foundation
+              - navigation "Week 1 — The Foundation" [ref=e36]:
+                - generic [ref=e37] [cursor=pointer]: Week 1 — The Foundation
+                - list [ref=e39]:
+                  - listitem [ref=e40]:
+                    - generic [ref=e42]: Day 1 · Installfest
+                    - navigation "Table of contents" [ref=e44]:
+                      - generic [ref=e45] [cursor=pointer]: Table of contents
+                      - list [ref=e46]:
+                        - listitem [ref=e47]:
+                          - link "Day 1" [ref=e48] [cursor=pointer]:
+                            - /url: http://localhost:8000/posts/week1/day-01/#day-1
+                            - generic [ref=e49]: Day 1
+                  - listitem [ref=e50]:
+                    - link "Day 2 · Git & Github" [ref=e51] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-02/
+                      - generic [ref=e52]: Day 2 · Git & Github
+                  - listitem [ref=e53]:
+                    - link "Day 3 · Working with LLMs" [ref=e54] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-03/
+                      - generic [ref=e55]: Day 3 · Working with LLMs
+                  - listitem [ref=e56]:
+                    - link "Day 4 · The Agent Loop" [ref=e57] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-04/
+                      - generic [ref=e58]: Day 4 · The Agent Loop
+                  - listitem [ref=e59]:
+                    - link "Day 5 · MCP Servers" [ref=e60] [cursor=pointer]:
+                      - /url: http://localhost:8000/posts/week1/day-05/
+                      - generic [ref=e61]: Day 5 · MCP Servers
+            - listitem [ref=e62]:
+              - link "About" [ref=e63] [cursor=pointer]:
+                - /url: http://localhost:8000/about/
+                - generic [ref=e64]: About
+        - article [ref=e66]:
+          - heading "Week 1 — The Foundation" [level=1] [ref=e67]
+          - heading "Day 1" [level=2] [ref=e68]
+          - paragraph [ref=e69]:
+            - strong [ref=e70]: "Date:"
+            - text: June 1, 2026
+          - paragraph [ref=e71]:
+            - strong [ref=e72]: "Title:"
+            - text: Machine Setup — Getting the Tools in Place
+          - separator [ref=e73]
+          - paragraph [ref=e74]: Before you can write a single line of code, you have to make sure your machine is ready to run it. That was Day 1 in a nutshell.
+          - paragraph [ref=e75]: "We went through the full setup: installing the right versions of Python, Node, Git, and a handful of other tools that I'll be relying on throughout the program. We also configured our terminals, set up our editors, and made sure everything could actually talk to each other."
+          - paragraph [ref=e76]: It sounds unglamorous, but there's something satisfying about getting a clean machine into a state where it's ready to do real work. Every tool installed felt like one less obstacle between me and actually building something.
+          - paragraph [ref=e77]:
+            - text: "The biggest takeaway:"
+            - strong [ref=e78]: environments matter
+            - text: . The reason we set things up carefully is so that "it works on my machine" never becomes an excuse. A consistent, well-configured environment is the foundation everything else sits on.
+          - separator [ref=e79]
+          - paragraph [ref=e80]:
+            - emphasis [ref=e81]:
+              - text: "Next:"
+              - link "Day 2 — Git & Github" [ref=e82] [cursor=pointer]:
+                - /url: http://localhost:8000/posts/week1/day-02/
+      - button "Back to top":
+        - img
+        - text: Back to top
+    - contentinfo [ref=e83]:
+      - navigation "Footer" [ref=e84]:
+        - 'link "Previous: Home" [ref=e85] [cursor=pointer]':
+          - /url: http://localhost:8000/
+          - img [ref=e87]
+          - generic [ref=e89]:
+            - text: Previous
+            - generic [ref=e90]: Home
+        - 'link "Next: Day 2 · Git & Github" [ref=e91] [cursor=pointer]':
+          - /url: http://localhost:8000/posts/week1/day-02/
+          - generic [ref=e92]:
+            - text: Next
+            - generic [ref=e93]: Day 2 · Git & Github
+          - img [ref=e95]
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - text: Made with
+          - link "Material for MkDocs" [ref=e100] [cursor=pointer]:
+            - /url: https://squidfunk.github.io/mkdocs-material/
+        - link "fravila08 on GitHub" [ref=e102] [cursor=pointer]:
+          - /url: https://github.com/fravila08
+          - img [ref=e103]

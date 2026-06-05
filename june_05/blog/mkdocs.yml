@@ -1,0 +1,39 @@
+site_name: Francisco's Dev Journey
+site_description: Documenting my path to becoming a Full-Stack Developer
+site_author: Francisco
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: black
+    accent: red
+  features:
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+    - navigation.instant
+    - header.autohide
+    - navigation.footer
+  font:
+    text: Share Tech Mono
+    code: Source Code Pro
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fravila08
+      name: fravila08 on GitHub
+
+nav:
+  - Home: index.md
+  - "Week 1 — The Foundation":
+    - "Day 1 · Installfest": posts/week1/day-01.md
+    - "Day 2 · Git & Github": posts/week1/day-02.md
+    - "Day 3 · Working with LLMs": posts/week1/day-03.md
+    - "Day 4 · The Agent Loop": posts/week1/day-04.md
+    - "Day 5 · MCP Servers": posts/week1/day-05.md
+  - About: about.md
