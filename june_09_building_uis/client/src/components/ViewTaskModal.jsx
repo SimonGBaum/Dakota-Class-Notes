@@ -1,104 +1,91 @@
 import { useState, useEffect } from 'react'
-import { useTasks } from '../contexts/TaskContext'
+import { useApp } from '../context/AppContext'
 import './ViewTaskModal.css'
 
-function formatDate(date) {
-  if (!date) return ''
-  const d = new Date(date)
-  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-}
-
-function formatDateTime(date) {
-  if (!date) return ''
-  const d = new Date(date)
-  return d.toLocaleString('en-US', {
-    month: 'long', day: 'numeric', year: 'numeric',
-    hour: 'numeric', minute: '2-digit',
-  })
-}
-
 export default function ViewTaskModal({ task, onClose }) {
-  const { updateTask, completeTask, uncompleteTask, deleteTask } = useTasks()
-  const [name, setName] = useState(task.name)
+  const { updateTask, deleteTask, toggleComplete } = useApp()
+  const [title, setTitle] = useState(task.title)
   const [description, setDescription] = useState(task.description)
 
   useEffect(() => {
-    setName(task.name)
+    setTitle(task.title)
     setDescription(task.description)
-  }, [task.id])
+  }, [task])
 
   function handleSave() {
-    updateTask(task.id, { name: name.trim() || task.name, description })
+    updateTask(task.id, { title: title.trim() || task.title, description })
     onClose()
   }
 
   function handleDelete() {
-    if (window.confirm(`Delete task "${task.name}"? This cannot be undone.`)) {
+    if (window.confirm(`Delete task "${task.title}"? This cannot be undone.`)) {
       deleteTask(task.id)
       onClose()
     }
   }
 
-  function handleToggleComplete() {
-    if (task.completed) {
-      uncompleteTask(task.id)
-    } else {
-      completeTask(task.id)
-    }
+  function handleToggle() {
+    toggleComplete(task.id)
+    onClose()
+  }
+
+  function formatDate(date) {
+    if (!date) return '—'
+    return new Date(date).toLocaleDateString('en-US', {
+      month: 'long', day: 'numeric', year: 'numeric'
+    })
+  }
+
+  function formatDatetime(date) {
+    if (!date) return '—'
+    return new Date(date).toLocaleString('en-US', {
+      month: 'long', day: 'numeric', year: 'numeric',
+      hour: 'numeric', minute: '2-digit'
+    })
   }
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-card" onClick={e => e.stopPropagation()}>
+    <div className="modal-overlay" onClick={e => { if (e.target === e.currentTarget) onClose() }}>
+      <div className="modal-card">
         <button className="modal-close" onClick={onClose}>✕</button>
 
-        <div className="modal-field">
-          <input
-            className="modal-name-input"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            placeholder="task name"
-          />
+        <input
+          className="modal-title-input"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+        />
+
+        <div className="modal-date-row">
+          <span className="modal-date-value">{formatDate(task.createdAt)}</span>
         </div>
 
-        <div className="modal-field">
-          <input
-            type="date"
-            className="modal-date-input"
-            value={new Date(task.createdAt).toISOString().split('T')[0]}
-            readOnly
-          />
-        </div>
-
-        <div className="modal-field">
-          <label className="modal-label">Description:</label>
-          <textarea
-            className="modal-description"
-            value={description}
-            onChange={e => setDescription(e.target.value)}
-            placeholder="Add a description..."
-            rows={4}
-          />
-        </div>
+        <div className="modal-desc-label">Description:</div>
+        <textarea
+          className="modal-desc"
+          value={description}
+          onChange={e => setDescription(e.target.value)}
+          placeholder="Add a description..."
+          rows={4}
+        />
 
         {task.completed && (
           <div className="modal-completed-info">
-            <div className="completed-stamp">COMPLETED!!!</div>
-            <p className="completed-on">
-              Completed On: {formatDateTime(task.completedAt)}
-            </p>
+            <span className="modal-completed-on">
+              Completed On: {formatDatetime(task.completedAt)}
+            </span>
+            <div className="modal-stamp">COMPLETED!!!</div>
           </div>
         )}
 
         <div className="modal-actions">
-          <button className="modal-btn save" onClick={handleSave}>SAVE</button>
+          <button className="modal-btn modal-btn--save" onClick={handleSave}>SAVE</button>
           <button
-            className={`modal-btn toggle ${task.completed ? 'pending' : 'complete'}`}
-            onClick={handleToggleComplete}
+            className={`modal-btn ${task.completed ? 'modal-btn--pending' : 'modal-btn--complete'}`}
+            onClick={handleToggle}
           >
             {task.completed ? 'Pending??' : 'Completed'}
           </button>
-          <button className="modal-btn delete" onClick={handleDelete}>DELETE</button>
+          <button className="modal-btn modal-btn--delete" onClick={handleDelete}>DELETE</button>
         </div>
       </div>
     </div>

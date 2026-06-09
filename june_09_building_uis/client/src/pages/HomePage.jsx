@@ -1,27 +1,23 @@
+import Layout from '../components/Layout'
 import './HomePage.css'
 
 export default function HomePage() {
   return (
-    <div className="home-page">
-      <section className="home-content">
-        <h2 className="home-title">Welcome to <span className="neon-text-red">TaskMaster</span></h2>
-        <p>
-          In Night City, staying on top of your missions is the difference between surviving and thriving.
-          TaskMaster is your personal edge — a tool built for the fast-moving, never-stopping life of a
-          street operative. Track your objectives, mark your victories, and never let a job slip through
-          the cracks again.
+    <Layout>
+      <div className="home-content">
+        <p className="home-para">
+          Welcome to <strong>TaskMaster</strong> — your cyberpunk-grade productivity hub built for the mercenaries of the modern age. In Night City, every second counts. Here, so do your tasks.
         </p>
-        <p>
-          Whether you're juggling corpo contracts, side gigs, or personal goals, TaskMaster gives you
-          a clean, no-BS interface to organize what matters. Create tasks in seconds, mark them complete
-          with a click, and watch your daily streak climb as you power through the list.
+        <p className="home-para">
+          This application was designed to solve the chaos that plagues every solo operative: too many jobs, too little structure. TaskMaster gives you a single, clean interface to track everything you need to do — from the small errands to the high-stakes missions.
         </p>
-        <p>
-          Stay sharp. Stay organized. The city never sleeps — and neither does your task list.
-          Use the navigation above to view all your tasks, track pending work, or review what
-          you've already conquered today.
+        <p className="home-para">
+          Create tasks, monitor their progress, and mark them complete as you go. Your pending jobs stay visible so nothing slips through the cracks. Completed tasks are archived for your review. Every day, a counter tracks how many you've closed — your daily edge count.
         </p>
-      </section>
-    </div>
+        <p className="home-para">
+          Use the navigation above to jump between your task lists. Need help or want to reach the team? Hit <strong>Contact Us</strong>. Now jack in — there's work to be done.
+        </p>
+      </div>
+    </Layout>
   )
 }

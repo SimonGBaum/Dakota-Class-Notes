@@ -1,56 +1,58 @@
 import { useState } from 'react'
-import { useTasks } from '../contexts/TaskContext'
+import { useApp } from '../context/AppContext'
+import Layout from '../components/Layout'
 import TaskRow from '../components/TaskRow'
 import ViewTaskModal from '../components/ViewTaskModal'
-import './TaskPage.css'
+import './TasksPage.css'
 
 export default function PendingTasksPage() {
-  const { pendingTasks, addTask } = useTasks()
-  const [newTaskName, setNewTaskName] = useState('')
+  const { tasks, addTask } = useApp()
+  const [newTitle, setNewTitle] = useState('')
   const [selectedTask, setSelectedTask] = useState(null)
 
-  function handleAddTask(e) {
+  const pending = [...tasks]
+    .filter(t => !t.completed)
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+
+  function handleAdd(e) {
     e.preventDefault()
-    const name = newTaskName.trim()
-    if (!name) return
-    addTask(name)
-    setNewTaskName('')
+    if (newTitle.trim()) {
+      addTask({ title: newTitle.trim() })
+      setNewTitle('')
+    }
   }
 
   return (
-    <div className="task-page">
-      <form className="new-task-form" onSubmit={handleAddTask}>
-        <input
-          type="text"
-          placeholder="new task?"
-          value={newTaskName}
-          onChange={e => setNewTaskName(e.target.value)}
-          className="new-task-input"
-        />
-        <button type="submit" className="btn-add">+</button>
-      </form>
-
-      <p className="task-list-label">Here are your tasks sorted by date created:</p>
-
-      <div className="task-list">
-        {pendingTasks.length === 0 && (
-          <p className="empty-state">No pending tasks. Great work!</p>
-        )}
-        {pendingTasks.map(task => (
-          <TaskRow
-            key={task.id}
-            task={task}
-            onOpen={() => setSelectedTask(task)}
+    <Layout>
+      <div className="tasks-page">
+        <form className="task-create" onSubmit={handleAdd}>
+          <input
+            className="task-create-input"
+            placeholder="new task?"
+            value={newTitle}
+            onChange={e => setNewTitle(e.target.value)}
           />
-        ))}
+          <button type="submit" className="task-create-btn">+</button>
+        </form>
+
+        <p className="tasks-sort-label">Here are your tasks sorted by date created:</p>
+
+        <div className="task-list">
+          {pending.map(task => (
+            <TaskRow key={task.id} task={task} onOpenModal={setSelectedTask} />
+          ))}
+          {pending.length === 0 && (
+            <p className="tasks-empty">No pending tasks. You're all caught up!</p>
+          )}
+        </div>
       </div>
 
       {selectedTask && (
         <ViewTaskModal
-          task={pendingTasks.find(t => t.id === selectedTask.id) || selectedTask}
+          task={tasks.find(t => t.id === selectedTask.id) || selectedTask}
           onClose={() => setSelectedTask(null)}
         />
       )}
-    </div>
+    </Layout>
   )
 }

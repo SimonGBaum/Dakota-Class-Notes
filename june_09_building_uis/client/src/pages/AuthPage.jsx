@@ -1,182 +1,133 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useApp } from '../context/AppContext'
 import './AuthPage.css'
 
 export default function AuthPage() {
+  const { register, login } = useApp()
+  const navigate = useNavigate()
   const [isLogin, setIsLogin] = useState(true)
   const [error, setError] = useState('')
-  const { login, register } = useAuth()
-  const navigate = useNavigate()
 
-  const [loginForm, setLoginForm] = useState({ email: '', password: '' })
-  const [signupForm, setSignupForm] = useState({
+  const [form, setForm] = useState({
     firstName: '', lastName: '', username: '',
     email: '', password: '', confirmPassword: '',
   })
 
-  function handleLoginSubmit(e) {
+  function handleChange(e) {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    setError('')
+  }
+
+  function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    const result = login(loginForm)
-    if (result.success) {
-      navigate('/home')
+
+    if (isLogin) {
+      const result = login({ email: form.email, password: form.password })
+      if (result.error) { setError(result.error); return }
     } else {
-      setError(result.error)
+      if (form.password !== form.confirmPassword) {
+        setError('Passwords do not match.')
+        return
+      }
+      if (!form.email) {
+        setError('Email is required.')
+        return
+      }
+      const result = register({
+        firstName: form.firstName,
+        lastName: form.lastName,
+        username: form.username,
+        email: form.email,
+        password: form.password,
+      })
+      if (result.error) { setError(result.error); return }
     }
-  }
 
-  function handleSignupSubmit(e) {
-    e.preventDefault()
-    setError('')
-    if (signupForm.password !== signupForm.confirmPassword) {
-      setError('Passwords do not match.')
-      return
-    }
-    const result = register({
-      firstName: signupForm.firstName,
-      lastName: signupForm.lastName,
-      username: signupForm.username,
-      email: signupForm.email,
-      password: signupForm.password,
-    })
-    if (result.success) {
-      navigate('/home')
-    } else {
-      setError(result.error)
-    }
-  }
-
-  function handleLoginChange(e) {
-    setLoginForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  function handleSignupChange(e) {
-    setSignupForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    navigate('/home')
   }
 
   return (
-    <div className="auth-page">
+    <div className="auth-bg">
       <div className="auth-card">
         <div className="auth-logo">
-          <span className="logo-text">TASK<span className="neon-text-red">MASTER</span></span>
-          <div className="logo-underline" />
+          <span className="logo-text">TASK<span className="logo-accent">MASTER</span></span>
         </div>
 
-        {error && <div className="auth-error">{error}</div>}
-
-        {isLogin ? (
-          <form className="auth-form" onSubmit={handleLoginSubmit}>
-            <div className="input-group">
+        <form onSubmit={handleSubmit} className="auth-form">
+          {!isLogin && (
+            <>
               <input
-                type="email"
-                name="email"
-                placeholder="email"
-                value={loginForm.email}
-                onChange={handleLoginChange}
-                required
-                autoComplete="email"
-              />
-            </div>
-            <div className="input-group">
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                value={loginForm.password}
-                onChange={handleLoginChange}
-                required
-                autoComplete="current-password"
-              />
-            </div>
-            <div className="auth-footer">
-              <button
-                type="button"
-                className="toggle-link"
-                onClick={() => { setIsLogin(false); setError('') }}
-              >
-                I don't have an account
-              </button>
-              <button type="submit" className="btn-submit">Submit</button>
-            </div>
-          </form>
-        ) : (
-          <form className="auth-form" onSubmit={handleSignupSubmit}>
-            <div className="input-group">
-              <input
-                type="text"
                 name="firstName"
                 placeholder="first_name"
-                value={signupForm.firstName}
-                onChange={handleSignupChange}
+                value={form.firstName}
+                onChange={handleChange}
                 required
               />
-            </div>
-            <div className="input-group">
               <input
-                type="text"
                 name="lastName"
                 placeholder="last_name"
-                value={signupForm.lastName}
-                onChange={handleSignupChange}
+                value={form.lastName}
+                onChange={handleChange}
                 required
               />
-            </div>
-            <div className="input-group">
               <input
-                type="text"
                 name="username"
                 placeholder="username"
-                value={signupForm.username}
-                onChange={handleSignupChange}
+                value={form.username}
+                onChange={handleChange}
                 required
               />
-            </div>
-            <div className="input-group">
+            </>
+          )}
+
+          <input
+            name="email"
+            type="email"
+            placeholder="email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+
+          <div className="password-wrap">
+            <input
+              name="password"
+              type="password"
+              placeholder="password"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {!isLogin && (
+            <div className="password-wrap">
               <input
-                type="email"
-                name="email"
-                placeholder="email"
-                value={signupForm.email}
-                onChange={handleSignupChange}
-                required
-                autoComplete="email"
-              />
-            </div>
-            <div className="input-group">
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                value={signupForm.password}
-                onChange={handleSignupChange}
-                required
-                autoComplete="new-password"
-              />
-            </div>
-            <div className="input-group">
-              <input
-                type="password"
                 name="confirmPassword"
+                type="password"
                 placeholder="confirm password"
-                value={signupForm.confirmPassword}
-                onChange={handleSignupChange}
+                value={form.confirmPassword}
+                onChange={handleChange}
                 required
-                autoComplete="new-password"
               />
             </div>
-            <div className="auth-footer">
-              <button
-                type="button"
-                className="toggle-link"
-                onClick={() => { setIsLogin(true); setError('') }}
-              >
-                I have an account
-              </button>
-              <button type="submit" className="btn-submit">Submit</button>
-            </div>
-          </form>
-        )}
+          )}
+
+          {error && <p className="auth-error">{error}</p>}
+
+          <div className="auth-actions">
+            <button
+              type="button"
+              className="auth-toggle"
+              onClick={() => { setIsLogin(p => !p); setError('') }}
+            >
+              {isLogin ? "I don't have an account" : 'I have an account'}
+            </button>
+            <button type="submit" className="auth-submit">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
   )

@@ -1,9 +1,8 @@
 import { Navigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
-import Layout from './Layout'
+import { useApp } from '../context/AppContext'
 
 export default function ProtectedRoute({ children }) {
-  const { user } = useAuth()
-  if (!user) return <Navigate to="/" replace />
-  return <Layout>{children}</Layout>
+  const { currentUser } = useApp()
+  if (!currentUser) return <Navigate to="/" replace />
+  return children
 }

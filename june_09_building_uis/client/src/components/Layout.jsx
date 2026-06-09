@@ -1,11 +1,9 @@
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
-import { useTasks } from '../contexts/TaskContext'
+import { useApp } from '../context/AppContext'
 import './Layout.css'
 
 export default function Layout({ children }) {
-  const { logout } = useAuth()
-  const { dailyCompletedCount } = useTasks()
+  const { logout, dailyCount } = useApp()
   const navigate = useNavigate()
 
   function handleLogout() {
@@ -17,36 +15,21 @@ export default function Layout({ children }) {
     <div className="layout">
       <header className="layout-header">
         <div className="layout-logo">
-          <span className="logo-text">TASK<span className="neon-text-red">MASTER</span></span>
+          <span className="logo-text">TASK<span className="logo-accent">MASTER</span></span>
         </div>
-        {dailyCompletedCount > 0 && (
-          <div className="daily-counter">
-            <span className="counter-label">Today</span>
-            <span className="counter-value neon-text-yellow">{dailyCompletedCount}</span>
-            <span className="counter-label">completed</span>
-          </div>
-        )}
+        <div className="layout-daily">
+          <span className="daily-label">TODAY'S COMPLETED</span>
+          <span className="daily-count">{dailyCount}</span>
+        </div>
       </header>
 
       <nav className="layout-nav">
-        <div className="nav-links">
-          <NavLink to="/home" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            Home
-          </NavLink>
-          <NavLink to="/tasks" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            All Tasks
-          </NavLink>
-          <NavLink to="/tasks/completed" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            Completed
-          </NavLink>
-          <NavLink to="/tasks/pending" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            Pending
-          </NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            Contact Us
-          </NavLink>
-        </div>
-        <button className="btn-logout" onClick={handleLogout}>Logout</button>
+        <NavLink to="/home" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
+        <NavLink to="/tasks" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>All Tasks</NavLink>
+        <NavLink to="/tasks/completed" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Completed</NavLink>
+        <NavLink to="/tasks/pending" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Pending</NavLink>
+        <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Contact Us</NavLink>
+        <button className="nav-logout" onClick={handleLogout}>Logout</button>
       </nav>
 
       <main className="layout-main">

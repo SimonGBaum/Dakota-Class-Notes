@@ -1,4 +1,0 @@
-- generic [ref=e4]:
-  - generic [ref=e5]: ERR_404
-  - paragraph [ref=e6]: Oops! Something went wrong. We've been notified of this issue and will work diligently to fix it. We apologize for the inconvenience.
-  - button "Home" [ref=e7] [cursor=pointer]

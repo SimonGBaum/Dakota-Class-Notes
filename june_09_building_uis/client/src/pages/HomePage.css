@@ -1,24 +1,17 @@
-.home-page {
-  padding: 2rem;
-  max-width: 800px;
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-top: 0.5rem;
 }
 
-.home-title {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-}
-
-.home-content p {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
+.home-para {
+  font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 1.25rem;
+  color: var(--text);
 }
 
-.home-content p:last-child {
-  margin-bottom: 0;
+.home-para strong {
+  color: var(--cyan);
+  font-weight: normal;
 }

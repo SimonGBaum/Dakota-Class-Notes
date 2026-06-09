@@ -1,65 +1,46 @@
-.auth-page {
+.auth-bg {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-primary);
-  padding: 2rem;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, #00f0ff0a 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, #ff003c0a 0%, transparent 60%);
 }
 
 .auth-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-red);
-  border-radius: 6px;
+  border: 1px solid var(--cyan);
+  box-shadow: var(--glow-cyan), inset 0 0 40px #00f0ff08;
+  border-radius: 4px;
   padding: 2.5rem 2rem;
   width: 100%;
-  max-width: 380px;
-  box-shadow:
-    0 0 20px rgba(255, 0, 60, 0.1),
-    0 0 60px rgba(255, 0, 60, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  position: relative;
-}
-
-.auth-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--neon-red), transparent);
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .auth-logo {
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 2px dashed var(--border);
+  border-radius: 4px;
+  background: #05051000;
 }
 
 .logo-text {
-  font-family: var(--font-display);
-  font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
   font-weight: 900;
-  letter-spacing: 4px;
-  color: var(--text-primary);
-  text-transform: uppercase;
+  color: var(--text);
+  letter-spacing: 0.1em;
 }
 
-.logo-underline {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--neon-red), var(--neon-cyan), transparent);
-  margin-top: 0.5rem;
-}
-
-.auth-error {
-  background: var(--neon-red-dim);
-  border: 1px solid var(--neon-red);
-  border-radius: var(--radius);
-  padding: 0.6rem 1rem;
-  color: var(--neon-red);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.logo-accent {
+  color: var(--cyan);
+  text-shadow: var(--glow-cyan);
 }
 
 .auth-form {
@@ -68,69 +49,69 @@
   gap: 0.75rem;
 }
 
-.input-group input {
-  width: 100%;
+.auth-form input {
   background: var(--bg-input);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius);
-  padding: 0.65rem 1rem;
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-family: var(--font-body);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
   outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
 }
 
-.input-group input::placeholder {
-  color: var(--text-muted);
+.auth-form input:focus {
+  border-color: var(--cyan);
+  box-shadow: var(--glow-cyan);
 }
 
-.input-group input:focus {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.1);
+.password-wrap {
+  position: relative;
 }
 
-.auth-footer {
+.auth-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 0.5rem;
 }
 
-.toggle-link {
+.auth-toggle {
   background: none;
   border: none;
-  color: var(--neon-cyan);
-  font-size: 0.9rem;
-  font-family: var(--font-body);
+  color: var(--cyan);
+  font-size: 0.8rem;
   padding: 0;
-  text-decoration: underline;
   cursor: pointer;
-  transition: color var(--transition), text-shadow var(--transition);
+  text-decoration: underline;
+  font-family: 'Share Tech Mono', monospace;
 }
 
-.toggle-link:hover {
-  text-shadow: 0 0 8px var(--neon-cyan-glow);
+.auth-toggle:hover {
+  text-shadow: var(--glow-cyan);
 }
 
-.btn-submit {
-  background: var(--neon-cyan);
-  color: var(--bg-primary);
+.auth-submit {
+  background: var(--cyan);
+  color: var(--bg);
   border: none;
-  border-radius: var(--radius);
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
+  border-radius: 2px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  font-family: var(--font-display);
-  letter-spacing: 1px;
-  transition: box-shadow var(--transition), transform var(--transition);
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.05em;
+  transition: box-shadow 0.2s, transform 0.1s;
 }
 
-.btn-submit:hover {
-  box-shadow: 0 0 12px var(--neon-cyan-glow);
+.auth-submit:hover {
+  box-shadow: var(--glow-cyan);
   transform: translateY(-1px);
 }
 
-.btn-submit:active {
-  transform: translateY(0);
+.auth-error {
+  color: var(--red);
+  font-size: 0.82rem;
+  text-shadow: var(--glow-red);
 }
