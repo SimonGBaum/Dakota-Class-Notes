@@ -1,0 +1,59 @@
+- generic [ref=e29]:
+  - banner [ref=e30]:
+    - generic [ref=e32]: TASKMASTER
+    - generic [ref=e87]:
+      - generic [ref=e88]: Today
+      - generic [ref=e89]: "2"
+      - generic [ref=e90]: completed
+  - navigation [ref=e33]:
+    - generic [ref=e34]:
+      - link "Home" [ref=e35] [cursor=pointer]:
+        - /url: /home
+      - link "All Tasks" [ref=e36] [cursor=pointer]:
+        - /url: /tasks
+      - link "Completed" [ref=e37] [cursor=pointer]:
+        - /url: /tasks/completed
+      - link "Pending" [ref=e38] [cursor=pointer]:
+        - /url: /tasks/pending
+      - link "Contact Us" [ref=e39] [cursor=pointer]:
+        - /url: /contact
+    - button "Logout" [ref=e40] [cursor=pointer]
+  - main [ref=e41]:
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - textbox "new task?" [ref=e50]
+        - button "+" [ref=e51] [cursor=pointer]
+      - paragraph [ref=e52]: "Here are your tasks sorted by date created:"
+      - generic [ref=e53]:
+        - generic [ref=e55]:
+          - button "Buy Sandevistan implant" [ref=e56] [cursor=pointer]
+          - generic [ref=e57]:
+            - button "🗑" [ref=e58] [cursor=pointer]
+            - button "✏" [ref=e59] [cursor=pointer]
+            - checkbox "Mark pending" [checked] [ref=e91] [cursor=pointer]
+        - generic [ref=e61]:
+          - button "Meet Rogue at Afterlife" [ref=e62] [cursor=pointer]
+          - generic [ref=e63]:
+            - button "🗑" [ref=e64] [cursor=pointer]
+            - button "✏" [ref=e65] [cursor=pointer]
+            - checkbox "Mark complete" [ref=e66] [cursor=pointer]
+        - generic [ref=e67]:
+          - button "Fix the Quadra" [ref=e68] [cursor=pointer]
+          - generic [ref=e69]:
+            - button "🗑" [ref=e70] [cursor=pointer]
+            - button "✏" [ref=e71] [cursor=pointer]
+            - checkbox "Mark complete" [ref=e72] [cursor=pointer]
+      - generic [ref=e74]:
+        - button "✕" [ref=e75] [cursor=pointer]
+        - textbox "task name" [ref=e77]: Buy Sandevistan implant
+        - textbox [ref=e79]: 2026-06-09
+        - generic [ref=e80]:
+          - generic [ref=e81]: "Description:"
+          - textbox "Add a description..." [ref=e82]
+        - generic [ref=e92]:
+          - generic [ref=e93]: COMPLETED!!!
+          - paragraph [ref=e94]: "Completed On: June 9, 2026 at 10:04 AM"
+        - generic [ref=e83]:
+          - button "SAVE" [ref=e84] [cursor=pointer]
+          - button "Pending??" [active] [ref=e95] [cursor=pointer]
+          - button "DELETE" [ref=e86] [cursor=pointer]

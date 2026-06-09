@@ -1,0 +1,23 @@
+- generic [ref=e29]:
+  - banner [ref=e30]:
+    - generic [ref=e32]: TASKMASTER
+  - navigation [ref=e33]:
+    - generic [ref=e34]:
+      - link "Home" [ref=e35] [cursor=pointer]:
+        - /url: /home
+      - link "All Tasks" [active] [ref=e36] [cursor=pointer]:
+        - /url: /tasks
+      - link "Completed" [ref=e37] [cursor=pointer]:
+        - /url: /tasks/completed
+      - link "Pending" [ref=e38] [cursor=pointer]:
+        - /url: /tasks/pending
+      - link "Contact Us" [ref=e39] [cursor=pointer]:
+        - /url: /contact
+    - button "Logout" [ref=e40] [cursor=pointer]
+  - main [ref=e41]:
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - textbox "new task?" [ref=e50]
+        - button "+" [ref=e51] [cursor=pointer]
+      - paragraph [ref=e52]: "Here are your tasks sorted by date created:"
+      - paragraph [ref=e54]: No tasks yet. Add one above.

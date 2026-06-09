@@ -1,0 +1,28 @@
+- generic [ref=e29]:
+  - banner [ref=e30]:
+    - generic [ref=e32]: TASKMASTER
+  - navigation [ref=e33]:
+    - generic [ref=e34]:
+      - link "Home" [ref=e35] [cursor=pointer]:
+        - /url: /home
+      - link "All Tasks" [ref=e36] [cursor=pointer]:
+        - /url: /tasks
+      - link "Completed" [ref=e37] [cursor=pointer]:
+        - /url: /tasks/completed
+      - link "Pending" [ref=e38] [cursor=pointer]:
+        - /url: /tasks/pending
+      - link "Contact Us" [ref=e39] [cursor=pointer]:
+        - /url: /contact
+    - button "Logout" [ref=e40] [cursor=pointer]
+  - main [ref=e41]:
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - textbox "new task?" [active] [ref=e50]
+        - button "+" [ref=e51] [cursor=pointer]
+      - paragraph [ref=e52]: "Here are your tasks sorted by date created:"
+      - generic [ref=e55]:
+        - button "Buy Sandevistan implant" [ref=e56] [cursor=pointer]
+        - generic [ref=e57]:
+          - button "🗑" [ref=e58] [cursor=pointer]
+          - button "✏" [ref=e59] [cursor=pointer]
+          - checkbox "Mark complete" [ref=e60] [cursor=pointer]

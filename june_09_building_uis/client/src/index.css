@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #16161e;
+  --bg-input: #1e1e28;
+
+  --neon-red: #ff003c;
+  --neon-red-dim: rgba(255, 0, 60, 0.15);
+  --neon-red-glow: rgba(255, 0, 60, 0.5);
+  --neon-cyan: #00f0ff;
+  --neon-cyan-dim: rgba(0, 240, 255, 0.15);
+  --neon-cyan-glow: rgba(0, 240, 255, 0.5);
+  --neon-yellow: #f5c400;
+  --neon-yellow-dim: rgba(245, 196, 0, 0.15);
+  --neon-yellow-glow: rgba(245, 196, 0, 0.5);
+  --neon-green: #39ff14;
+  --neon-green-glow: rgba(57, 255, 20, 0.5);
+
+  --text-primary: #e8e8f0;
+  --text-secondary: #9090a0;
+  --text-muted: #5a5a70;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-red: rgba(255, 0, 60, 0.4);
+  --border-cyan: rgba(0, 240, 255, 0.4);
+
+  --font-display: 'Orbitron', monospace;
+  --font-body: 'Rajdhani', sans-serif;
+
+  --radius: 4px;
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  background-image:
+    radial-gradient(ellipse at 15% 60%, rgba(255, 0, 60, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 55%);
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan-glow);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+input, textarea {
+  font-family: var(--font-body);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-red);
+  border-radius: 3px;
+}
+
+.neon-text-red {
+  color: var(--neon-red);
+  text-shadow: 0 0 8px var(--neon-red-glow);
+}
+.neon-text-cyan {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan-glow);
+}
+.neon-text-yellow {
+  color: var(--neon-yellow);
+  text-shadow: 0 0 8px var(--neon-yellow-glow);
+}

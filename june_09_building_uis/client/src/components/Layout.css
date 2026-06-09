@@ -1,0 +1,121 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.layout-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.layout-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-red), var(--neon-cyan), transparent);
+}
+
+.layout-logo .logo-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.daily-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--neon-yellow-dim);
+  border: 1px solid var(--neon-yellow);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
+.counter-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.counter-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.layout-nav {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--neon-cyan);
+  text-shadow: none;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--neon-red);
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid var(--border-red);
+  color: var(--neon-red);
+  border-radius: var(--radius);
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.btn-logout:hover {
+  background: var(--neon-red-dim);
+  box-shadow: 0 0 8px var(--neon-red-glow);
+}
+
+.layout-main {
+  flex: 1;
+  padding: 2rem;
+}

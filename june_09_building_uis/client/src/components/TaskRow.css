@@ -1,0 +1,111 @@
+.task-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 0.55rem 0.75rem;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.task-row:hover {
+  border-color: var(--border-cyan);
+  background: rgba(0, 240, 255, 0.03);
+}
+
+.task-row.completed .task-name {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.task-row.editing {
+  border-color: var(--neon-yellow);
+  background: rgba(245, 196, 0, 0.05);
+}
+
+.task-name {
+  flex: 1;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  padding-right: 0.5rem;
+  transition: color var(--transition);
+}
+
+.task-name:hover {
+  color: var(--neon-cyan);
+}
+
+.task-edit-input {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--neon-yellow);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.6rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  outline: none;
+  margin-right: 0.5rem;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0.2rem 0.3rem;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition);
+  color: var(--text-muted);
+}
+
+.icon-btn:hover {
+  transform: scale(1.15);
+}
+
+.trash-btn:hover {
+  color: var(--neon-red);
+  background: var(--neon-red-dim);
+}
+
+.edit-btn:hover {
+  color: var(--neon-yellow);
+  background: var(--neon-yellow-dim);
+}
+
+.save-btn {
+  color: var(--neon-green);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.save-btn:hover {
+  background: rgba(57, 255, 20, 0.1);
+}
+
+.cancel-btn {
+  color: var(--neon-red);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cancel-btn:hover {
+  background: var(--neon-red-dim);
+}
+
+.task-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--neon-cyan);
+}
