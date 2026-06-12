@@ -1,0 +1,6 @@
+id,title,created_at,description,completed,completed_at,user_id
+14526d89-6c74-4fe0-97a9-87360d752d97,bug is fixed,2026-06-11 16:44:13.149955,demo for debugging with Claude Code,true,2026-06-11 16:56:57.393295,71d3fd3c-5ef5-467e-9907-9aa84720c1f8
+513dae4e-39d1-496d-851d-9250725d15f1,Bug fix test task,2026-06-11 16:55:15.057659,This description should save alongside the completed status.,true,2026-06-11 16:55:32.997655,ce774d9b-1b02-422c-8cdf-ca2d7992b125
+7375a841-dc46-4abf-ac21-e28e175a07bb,Hack the Arasaka mainframe,2026-06-11 16:38:30.875321,Get past the ICE and extract the Militech contracts.,true,2026-06-11 16:40:31.856788,ce774d9b-1b02-422c-8cdf-ca2d7992b125
+d0a3d669-68c2-484f-8b13-0668c4e33600,new,2026-06-11 16:43:44.631088,,false,,71d3fd3c-5ef5-467e-9907-9aa84720c1f8
+f58a73d2-1a7f-4b4b-9136-8ae7e1b56bd7,demonstrate this worked,2026-06-11 16:43:52.091018,,false,,71d3fd3c-5ef5-467e-9907-9aa84720c1f8
