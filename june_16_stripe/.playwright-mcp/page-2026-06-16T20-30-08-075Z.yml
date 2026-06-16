@@ -1,0 +1,84 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e6]: TASKMASTER
+    - generic [ref=e7]:
+      - generic [ref=e8]: TODAY'S COMPLETED
+      - generic [ref=e9]: "0"
+  - navigation [ref=e10]:
+    - link "Home" [ref=e11] [cursor=pointer]:
+      - /url: /home
+    - link "All Tasks" [ref=e12] [cursor=pointer]:
+      - /url: /tasks
+    - link "Completed" [ref=e13] [cursor=pointer]:
+      - /url: /tasks/completed
+    - link "Pending" [ref=e14] [cursor=pointer]:
+      - /url: /tasks/pending
+    - link "Contact Us" [ref=e15] [cursor=pointer]:
+      - /url: /contact
+    - button "Logout" [ref=e16] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - heading "Buy Me a Coffee" [level=2] [ref=e19]
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: Support this project with a one-time donation.
+        - generic [ref=e22]:
+          - button "$5" [ref=e23] [cursor=pointer]
+          - button "$10" [ref=e24] [cursor=pointer]
+          - button "$25" [ref=e25] [cursor=pointer]
+          - button "$50" [ref=e26] [cursor=pointer]
+        - generic [ref=e27]:
+          - generic [ref=e28]: $
+          - spinbutton [ref=e29]
+        - generic [ref=e30]:
+          - generic [ref=e31]: CARD DETAILS
+          - generic [ref=e34]:
+            - iframe [ref=e35]:
+              - generic [ref=f14e1]:
+                - generic: 0123456789０１２３４５６７８９
+                - textbox [disabled]
+                - generic [ref=f14e2]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - img
+                          - generic: Current card brand is Visa.
+                        - generic:
+                          - img "CVC"
+                  - generic [ref=f14e3]:
+                    - generic [ref=f14e4]:
+                      - generic:
+                        - generic: "0002"
+                        - text: 4000 0000 0000 0002
+                      - generic [ref=f14e6]:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - img
+                                - generic: Current card brand is Visa.
+                              - generic:
+                                - img "CVC"
+                        - textbox "Credit or debit card number" [ref=f14e9]:
+                          - /placeholder: Card number
+                          - text: 4000 0000 0000 0002
+                    - generic [ref=f14e10]:
+                      - textbox "Credit or debit card expiration date" [ref=f14e14]:
+                        - /placeholder: MM / YY
+                        - text: 12 / 28
+                      - textbox "Credit or debit card CVC/CVV" [ref=f14e18]:
+                        - /placeholder: CVC
+                        - text: "123"
+                      - textbox "ZIP" [ref=f14e22]: "42424"
+                - textbox [disabled]
+                - button
+            - textbox
+            - iframe [ref=e40]:
+              - button "Save with Link" [ref=f19e10] [cursor=pointer]:
+                - generic [ref=f19e17]: Save with
+                - img [ref=f19e18]
+        - paragraph [ref=e42]: Your card has been declined.
+        - button "Donate $10.00" [ref=e43] [cursor=pointer]
+  - link "Buy me a coffee" [ref=e37] [cursor=pointer]:
+    - /url: /donate
+    - img "Buy me a coffee" [ref=e38]

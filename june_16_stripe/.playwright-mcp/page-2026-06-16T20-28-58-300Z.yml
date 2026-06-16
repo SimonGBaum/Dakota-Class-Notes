@@ -1,0 +1,28 @@
+- generic [ref=e45]:
+  - banner [ref=e46]:
+    - generic [ref=e48]: TASKMASTER
+    - generic [ref=e49]:
+      - generic [ref=e50]: TODAY'S COMPLETED
+      - generic [ref=e51]: "0"
+  - navigation [ref=e52]:
+    - link "Home" [ref=e53] [cursor=pointer]:
+      - /url: /home
+    - link "All Tasks" [ref=e54] [cursor=pointer]:
+      - /url: /tasks
+    - link "Completed" [ref=e55] [cursor=pointer]:
+      - /url: /tasks/completed
+    - link "Pending" [ref=e56] [cursor=pointer]:
+      - /url: /tasks/pending
+    - link "Contact Us" [ref=e57] [cursor=pointer]:
+      - /url: /contact
+    - button "Logout" [ref=e58] [cursor=pointer]
+  - main [ref=e59]:
+    - generic [ref=e60]:
+      - heading "Buy Me a Coffee" [level=2] [ref=e61]
+      - paragraph [ref=e85]:
+        - text: Payment of
+        - strong [ref=e86]: $10.00
+        - text: received. Thank you!
+  - link "Buy me a coffee" [ref=e79] [cursor=pointer]:
+    - /url: /donate
+    - img "Buy me a coffee" [ref=e80]

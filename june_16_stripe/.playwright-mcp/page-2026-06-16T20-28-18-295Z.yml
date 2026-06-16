@@ -1,0 +1,81 @@
+- generic [ref=e45]:
+  - banner [ref=e46]:
+    - generic [ref=e48]: TASKMASTER
+    - generic [ref=e49]:
+      - generic [ref=e50]: TODAY'S COMPLETED
+      - generic [ref=e51]: "0"
+  - navigation [ref=e52]:
+    - link "Home" [ref=e53] [cursor=pointer]:
+      - /url: /home
+    - link "All Tasks" [ref=e54] [cursor=pointer]:
+      - /url: /tasks
+    - link "Completed" [ref=e55] [cursor=pointer]:
+      - /url: /tasks/completed
+    - link "Pending" [ref=e56] [cursor=pointer]:
+      - /url: /tasks/pending
+    - link "Contact Us" [ref=e57] [cursor=pointer]:
+      - /url: /contact
+    - button "Logout" [ref=e58] [cursor=pointer]
+  - main [ref=e59]:
+    - generic [ref=e60]:
+      - heading "Buy Me a Coffee" [level=2] [ref=e61]
+      - generic [ref=e62]:
+        - paragraph [ref=e63]: Support this project with a one-time donation.
+        - generic [ref=e64]:
+          - button "$5" [ref=e65] [cursor=pointer]
+          - button "$10" [active] [ref=e66] [cursor=pointer]
+          - button "$25" [ref=e67] [cursor=pointer]
+          - button "$50" [ref=e68] [cursor=pointer]
+        - generic [ref=e69]:
+          - generic [ref=e70]: $
+          - spinbutton [ref=e71]
+        - generic [ref=e72]:
+          - generic [ref=e73]: CARD DETAILS
+          - generic [ref=e76]:
+            - iframe [ref=e77]:
+              - generic [ref=f4e1]:
+                - generic: 0123456789０１２３４５６７８９
+                - textbox [disabled]
+                - generic [ref=f4e2]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - img
+                        - generic:
+                          - img
+                  - generic [ref=f4e3]:
+                    - generic [ref=f4e4]:
+                      - generic: Number
+                      - generic [ref=f4e6]:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - img
+                              - generic:
+                                - img
+                        - textbox "Credit or debit card number" [ref=f4e9]:
+                          - /placeholder: Card number
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - textbox:
+                              - /placeholder: MM / YY
+                      - generic:
+                        - generic:
+                          - generic:
+                            - textbox:
+                              - /placeholder: CVC
+                - textbox [disabled]
+                - button
+            - textbox
+            - iframe [ref=e82]:
+              - button "Autofill with Link" [ref=f9e3] [cursor=pointer]:
+                - generic [ref=f9e5]: Autofill
+                - img [ref=f9e6]
+        - button "Donate $10.00" [ref=e78] [cursor=pointer]
+  - link "Buy me a coffee" [ref=e79] [cursor=pointer]:
+    - /url: /donate
+    - img "Buy me a coffee" [ref=e80]
