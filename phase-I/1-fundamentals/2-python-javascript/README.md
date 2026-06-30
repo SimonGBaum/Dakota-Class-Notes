@@ -3,7 +3,7 @@
 ## Part I
 
 - What is JavaScript & Python
-    - History
+    - Why?
     - Commonalities
     - differences
 - Docker
@@ -41,6 +41,7 @@
 
 - Conditional Statements
     - multiple conditions
+    - ternary statements
 - range method
 
 ### Iterations
