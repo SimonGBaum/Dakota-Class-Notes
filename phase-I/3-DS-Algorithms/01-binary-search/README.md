@@ -5,6 +5,7 @@
     - the problem (worse scenario)
     - does it match our concept?
 - binary search
+    - pre-requisites?
     - determining the middle
     - how to switch to left or right
     - what are the stopping conditions
