@@ -1,0 +1,8 @@
+id,title,description,status,task_id
+2,Send calendar invite,Schedule retro meeting with team,True,1
+3,Collect feedback forms,Gather written feedback before meeting,True,1
+5,Draft changelog entries,List all changed endpoints,False,4
+7,Backup current database,Create full backup before migration,True,6
+8,Write migration script,Script to move data to new schema,False,6
+9,Test on staging,Run migration on staging environment,False,6
+11,Create client folder,Set up shared drive folder,True,10

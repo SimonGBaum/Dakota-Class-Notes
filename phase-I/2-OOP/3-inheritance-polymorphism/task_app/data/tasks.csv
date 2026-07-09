@@ -1,0 +1,6 @@
+title,description,status
+Plan Sprint Retro,Prepare agenda and gather feedback from team,True
+Update API Documentation,Sync docs with latest endpoint changes,False
+Migrate Database Schema,Move production DB to new schema version,False
+Client Onboarding,Set up new client workspace and accounts,True
+Review Q3 Budget,Audit spend against forecast,False

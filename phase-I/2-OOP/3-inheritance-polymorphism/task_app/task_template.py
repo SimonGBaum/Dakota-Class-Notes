@@ -1,11 +1,12 @@
-class Task:
+class TaskTemplate:
+    URGENCY = 'Routine'
     nxt_id = 1
 
     def __init__(self, 
             title:str, 
             description:str = None, 
             status:bool = False,
-        ) -> 'Task':
+        ) -> 'TaskTemplate':
         self.id = self.gen_id()
         self.title = title
         self.description = description
@@ -33,23 +34,15 @@ class Task:
             "description":input("Describe the task:\n>"),
             "status":False,
         }
-        new_task = cls(**task_dict) # kwargs = key word arguments
-        # new_task = cls(
-        #     title = task_dict.get('title'),
-        #     description = task_dict.get('description'),
-        #     status = task_dict.get('status')
-        # )
+        new_task = cls(**task_dict) 
         return f"Success <{new_task}>"
     
     @staticmethod
-    def mark_all_completed(iter:list['Task'])->None:
-        """
-        take in a list of tasks instances and change all 
-        tasks status attribute to True
-        """
+    def mark_all_completed(iter:list['TaskTemplate'])->None:
         for task in iter:
             task.mark_completed()
         print("All tasks in lists have been updated")
 
     def __repr__(self):
         return f"<< ID:{self.id} | TITLE: {self.title} | STATUS: {"COMPLETED" if self.status else "INCOMPLETE"} >>"
+    

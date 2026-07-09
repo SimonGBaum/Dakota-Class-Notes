@@ -1,6 +1,5 @@
 class Dog:
-
-    breed = None
+    BREED = None
     all_dogs = []
     
     def __init__(self, name:str, age:int, height:int, color:str)->'Dog':
@@ -56,9 +55,9 @@ class Dog:
     def bark(self):
         return f"{self.name} is barking loudly"
     
-    # def __str__(self):
-    #     return f"CLASS DOG: {self.name} STR"
+    def __str__(self):
+        return f"CLASS DOG: {self.name} | BREED: {self.BREED} STR"
     
-    # def __repr__(self):
-    #     return f"CLASS DOG: {self.name} RPR"
+    def __repr__(self):
+        return f"CLASS DOG: {self.name} | BREED: {self.BREED} RPR"
 
