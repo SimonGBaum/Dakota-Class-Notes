@@ -1,0 +1,9 @@
+FROM python:3.14-slim-trixie
+
+WORKDIR /app
+
+RUN pip install pytest
+
+COPY . .
+
+CMD ["pytest", "test_main.py"]
