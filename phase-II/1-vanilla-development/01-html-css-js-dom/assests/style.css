@@ -1,62 +1,156 @@
-*{
-    box-sizing:border-box;
-}
-body{
-    margin: 0;
-    background-color: ivory;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1f2937
-}
 
-.site-header{
-    padding: 32px;
-    background: #111827 ;
-    color: white;
-}
+/*
+  STUDENT NOTE:
+  CSS controls how HTML elements look.
 
-.eyebrow{
-    margin: 0 0 8px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-#page-title{
-    margin: 0;
-    font-size:48px;
-}
+  This file demonstrates:
 
-.subtitle{
-    color: #d1d5db;
+  1. element selectors
+  2. class selectors
+  3. ID selectors
+  4. the box model
+  5. box-shadow
+  6. text-decoration
+*/
+
+/*
+  This is a small CSS reset.
+
+  The universal selector (*) selects every element.
+
+  box-sizing: border-box makes an element's declared width include
+  its content, padding, and border. This usually makes sizing easier
+  to understand.
+*/
+* {
+  box-sizing: border-box;
 }
 
-.page-layout{
-    padding:16px;
+/*
+  Element selector:
+
+  This rule selects every body element. Since a page has one body,
+  these styles become the default styles for the entire page.
+*/
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: ivory;
+  color: #1f2937;
 }
 
-.panel{
-    max-width: 900px;
-    margin: 0 auto 16px;
-    padding: 16px;
-    border: 1px solid #d1d5db;
-    border-radius:12px;
+/*
+  Class selector:
 
-    box-shadow: 0 2px 8px #d1d5db
+  Class selectors begin with a period.
+
+  Classes are reusable, so multiple elements can share the same class.
+*/
+.site-header {
+  padding: 32px;
+  background: #111827;
+  color: white;
 }
 
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c7d2fe;
+}
 
+/*
+  ID selector:
+
+  ID selectors begin with a hash symbol.
+
+  An ID should identify one unique element on the page.
+*/
+#page-title {
+  margin: 0;
+  font-size: 48px;
+}
+
+.subtitle {
+  color: #d1d5db;
+}
+
+.page-layout {
+  padding: 16px;
+}
+
+/*
+  The box model describes the space used by an element:
+
+  content
+  padding
+  border
+  margin
+
+  Content is the text or other material inside the element.
+
+  Padding creates space inside the border.
+
+  Border draws a line around the padding and content.
+
+  Margin creates space outside the border.
+*/
+.panel {
+  max-width: 900px;
+  margin: 0 auto 16px;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: white;
+
+  /*
+    box-shadow adds a shadow around an element.
+
+    The values represent:
+
+    horizontal offset
+    vertical offset
+    blur amount
+    shadow color
+  */
+  box-shadow: 0 2px 8px #d1d5db;
+}
+
+/*
+  This is a descendant selector.
+
+  It selects h2 elements only when they are inside an element
+  with the panel class.
+*/
 .panel h2 {
   margin-top: 0;
 }
 
 .logo {
   width: 200px;
+
+  /*
+    This prevents the image from becoming wider than its container
+    on a smaller screen.
+  */
   max-width: 100%;
 }
 
 .demo-table {
   width: 100%;
+
+  /*
+    border-collapse combines neighboring table borders into
+    a single border.
+  */
   border-collapse: collapse;
 }
 
+/*
+  A comma lets multiple selectors share the same CSS rule.
+
+  These styles apply to both th and td elements inside demo-table.
+*/
 .demo-table th,
 .demo-table td {
   padding: 10px;
@@ -68,26 +162,62 @@ body{
   background: #eef2ff;
 }
 
-/* Specificity demo: element selector < class selector < id selector. */
+/*
+  Specificity helps the browser decide which CSS rule wins.
+
+  A simplified order is:
+
+  element selector
+  class selector
+  ID selector
+  inline style
+
+  More specific selectors usually override less specific selectors.
+*/
+
+/*
+  This selector targets paragraph elements inside an element
+  with the selector-demo class.
+*/
 .selector-demo p {
   padding: 8px;
   border-radius: 6px;
   background: #f3f4f6;
 }
 
+/*
+  This class selector is more specific than a plain p selector.
+*/
 .callout {
   font-weight: bold;
   background: #fef3c7;
 }
 
+/*
+  This ID selector is more specific than element and class selectors.
+*/
 #unique-message {
   border: 2px solid #4f46e5;
 }
 
+/*
+  completed is a class name created for this project.
+
+  CSS class names do not have built-in behavior. They only receive
+  the styles that we define.
+
+  JavaScript could later add or remove this class when a task is
+  marked complete.
+*/
 .completed {
   text-decoration: line-through;
 }
 
+/*
+  These selectors make the form controls appear on separate lines.
+
+  display: block makes each selected element take up its own line.
+*/
 .user-form label,
 .user-form input,
 .user-form button {
@@ -95,6 +225,10 @@ body{
   margin-bottom: 8px;
 }
 
+/*
+  This rule applies the same padding and font size to every
+  input and button element.
+*/
 input,
 button {
   padding: 10px;
@@ -107,9 +241,18 @@ button {
   background: #4f46e5;
   color: white;
   font-weight: bold;
+
+  /*
+    The pointer cursor helps communicate that the element is clickable.
+  */
   cursor: pointer;
 }
 
+/*
+  :hover is a pseudo-class.
+
+  This rule applies only while the user's pointer is over a button.
+*/
 button:hover {
   background: #3730a3;
 }
@@ -122,6 +265,11 @@ button:hover {
   margin-top: 16px;
 }
 
+/*
+  JavaScript can create elements with the demo-box class.
+
+  When that class is added, the new element receives these styles.
+*/
 .demo-box {
   margin-bottom: 8px;
   padding: 12px;
@@ -135,3 +283,4 @@ button:hover {
   text-align: center;
   background: #e5e7eb;
 }
+
