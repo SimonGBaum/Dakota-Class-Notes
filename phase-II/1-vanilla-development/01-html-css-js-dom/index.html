@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dakota Vanilla Dev</title>
+    <link rel="stylesheet" href="./assests/style.css">
+
+</head>
+<body>
+    <header class="site-header">
+        <p class="eyebrow">Code Platoon FE Day</p>
+        <h1 id="page-title">Dakota Vanilla Dev</h1>
+        <p class="subtitle">HTML Give give structure, CSS Give Style, JavaScript Gives behavoir</p>
+    </header>
+    <main class="page-layout">
+        <section class="panel">
+            <h2 id="spec" > 1. HTML Create the Content</h2>
+            <p>
+                The browser Read HTML and Turns tags into elements on the page.
+            </p>
+            <img src="https://www.codeplatoon.org/hs-fs/hubfs/Logos/CP%20Logos/Primary%20Logo-Website.png?width=500&height=176&name=Primary%20Logo-Website.png" alt="Code Platoon">
+            <h3>Three front end job</h3>
+            <ol>
+                <li><strong>HTML</strong> creates structure</li>
+                <li><strong>CSS</strong> control presentation</li>
+                <li><strong>JS</strong> control behavior</li>
+            </ol>
+            <table class="demo-table">
+                <thead>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Question it Answers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></td>
+                        <td>What content exists?</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></td>
+                        <td>How should it look?</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://developer.mozilla.org">JavaScript</a></td>
+                        <td>What should it behave?</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>2. CSS Styles the content</h2>
+            <p>This paragraph is styled by an element selector.</p>
+            <p class="callout">This paragraph is styled by a class selector.</p>
+            <p id="unique-message">This paragraph is styled by an ID selector.</p>
+
+            <p class="completed">This will be crossed</p>
+        </section>
+        <section class="panel">
+            <h2>3. Forms collect user input</h2>
+            <form id="user-form" class="user-form">
+                <label for="name-input">Name</label>
+                <input id="name-input" name="userName" type="text" placeholder="Ada" required/>
+
+                <label for="color-input">FAV color</label>
+                <input type="color"/>
+
+                <label for="newletter-input">
+                    Send Me Updates
+                </label>
+                <input type="checkbox" name="wantsNewsletter" id="newletter-input"/>
+                
+                <button type="submit">Update Page</button>
+                <p id="form-output" class="output-text">Submit the form and JavaScript will change this text.</p>
+
+            </form>
+        </section>
+
+    <section class="panel">
+      <h2>4. JavaScript changes the DOM</h2>
+
+
+      <p id="status-message">This text starts in HTML.</p>
+      <button id="change-title-button" type="button">Change the title</button>
+
+      <hr>
+
+      <p>Add one element, then delete it.</p>
+      <button id="add-box-button" type="button">Add demo div</button>
+      <button id="remove-box-button" type="button">Remove demo div</button>
+      <div id="dynamic-container" class="dynamic-container"></div>
+    </section>
+    </main>
+    <footer class="site-footer">
+        <p> &copy; 2026 Code Platoon</p>
+    </footer>
+</body>
+</html>

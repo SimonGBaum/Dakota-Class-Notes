@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    The head contains information about the page.
+    Most of this information does not show up directly on the page,
+    but the browser uses it to understand how to load and display the document.
+  -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Components Walkthrough</title>
+
+  <!--
+    This page uses a small amount of CSS so the examples are easier to see.
+    HTML creates the elements. CSS changes how those elements look.
+  -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      
+    }
+
+    section {
+      border: 1px solid black;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    img {
+      max-width: 250px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      margin-top: 4px;
+      padding: 6px;
+      font-size: 1rem;
+    }
+
+    .completed {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Big idea:
+    HTML describes the structure and meaning of content.
+    The browser gives HTML default styling, but we usually use CSS to control the final look.
+  -->
+
+  <header>
+    <h1>HTML Components Walkthrough</h1>
+    <p>This page is a quick tour of common HTML elements.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Page structure / semantic tags</h2>
+
+      <!--
+        Semantic tags describe the role or purpose of content.
+
+        header: introductory content, often at the top of a page or section
+        nav: navigation links
+        main: the main content of the page
+        section: a grouped section of related content
+        article: content that could stand on its own
+        aside: extra related information
+        footer: ending or bottom content
+
+        div and span are generic containers. They are useful, but they do not describe meaning by themselves.
+      -->
+
+      <nav>
+        <a href="#headings">Headings</a> |
+        <a href="#text">Text</a> |
+        <a href="#forms">Forms</a>
+      </nav>
+
+      <article>
+        <h3>Example article</h3>
+        <p>An article is content that could stand on its own, like a blog post or news item.</p>
+      </article>
+
+      <aside>
+        <p><strong>Aside:</strong> This is extra related information.</p>
+      </aside>
+    </section>
+
+    <section id="headings">
+      <h2>2. Heading tags</h2>
+
+      <!--
+        Headings create a hierarchy for the page.
+        h1 is the highest-level heading, and h6 is the lowest-level heading.
+
+        Do not choose h1-h6 only because of the default size.
+        Choose headings based on the structure of the content.
+      -->
+
+      <h1>h1: Main page title</h1>
+      <h2>h2: Major section</h2>
+      <h3>h3: Subsection</h3>
+      <h4>h4: Smaller subsection</h4>
+      <h5>h5: Minor heading</h5>
+      <h6>h6: Smallest heading</h6>
+    </section>
+
+    <section id="text">
+      <h2>3. Text elements</h2>
+
+      <!--
+        p creates a paragraph.
+        strong marks important text.
+        em marks emphasized text.
+        span is a generic inline wrapper.
+        br forces a line break.
+        hr creates a thematic break between content.
+      -->
+
+      <p>This is a paragraph of normal text.</p>
+      <p>This word is <strong>strong</strong>.</p>
+      <p>This word is <em>emphasized</em>.</p>
+      <p>This word is inside a <span>span</span>.</p>
+
+      <!--
+        The completed class is not special HTML.
+        It only crosses out the text because the CSS above defines .completed with text-decoration: line-through.
+      -->
+      <p class="completed">This is a completed task shown with CSS strikethrough.</p>
+
+      <p>Line one<br/>Line two after a br tag.</p>
+      <hr />
+      <p>The horizontal line above came from an hr tag.</p>
+    </section>
+
+    <section>
+      <h2>4. Links and images</h2>
+
+      <!--
+        a creates a link.
+        href tells the browser where the link goes.
+        target="_blank" opens the link in a new tab.
+
+        img displays an image.
+        src tells the browser where the image file is.
+        alt describes the image for accessibility and for cases where the image cannot load.
+      -->
+
+      <p>
+        Visit the
+        <a href="https://www.codeplatoon.org/" target="_blank">Code Platoon website</a>.
+      </p>
+
+      <img
+        src="https://www.codeplatoon.org/hs-fs/hubfs/Logos/CP%20Logos/Primary%20Logo-Website.png?width=500&height=176&name=Primary%20Logo-Website.png"
+        alt="Code Platoon logo"
+      >
+    </section>
+
+    <section>
+      <h2>5. Lists</h2>
+
+      <!--
+        ul creates an unordered list. These usually show as bullets.
+        ol creates an ordered list. These usually show as numbers.
+        li creates each list item.
+
+        Try changing the first ul below into an ol and then refresh the browser.
+        The content is the same, but the browser displays the list differently.
+      -->
+
+      <h3>Unordered list</h3>
+      <ul>
+        <li>HTML creates structure.</li>
+        <li>CSS creates style.</li>
+        <li>JavaScript creates behavior.</li>
+      </ul>
+
+      <h3>Ordered list</h3>
+      <ol>
+        <li>Create the HTML.</li>
+        <li>Add CSS.</li>
+        <li>Add JavaScript.</li>
+      </ol>
+
+      <!--
+        dl creates a description list.
+        dt is the term.
+        dd is the description for that term.
+      -->
+      <h3>Description list</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Structure and meaning.</dd>
+        <dt>CSS</dt>
+        <dd>Presentation and layout.</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>6. Tables</h2>
+
+      <!--
+        Tables are for row-and-column data.
+        They should not be used as the main way to lay out a whole page.
+
+        table creates the table.
+        thead groups the header rows.
+        tbody groups the main data rows.
+        tr creates a table row.
+        th creates a header cell.
+        td creates a normal data cell.
+      -->
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>table</td>
+            <td>Creates the table.</td>
+          </tr>
+          <tr>
+            <td>tr</td>
+            <td>Creates a table row.</td>
+          </tr>
+          <tr>
+            <td>th</td>
+            <td>Creates a table header cell.</td>
+          </tr>
+          <tr>
+            <td>td</td>
+            <td>Creates a normal table data cell.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="forms">
+      <h2>7. Forms and inputs</h2>
+
+      <!--
+        Forms collect information from users.
+
+        form groups the input fields.
+        label gives an input readable text.
+        The label's for attribute should match the input's id.
+        The input's name attribute becomes important when JavaScript or a server reads the form data.
+      -->
+
+      <form>
+        <fieldset>
+          <legend>Common text inputs</legend>
+
+          <label for="text-input">Text input</label>
+          <input id="text-input" name="textInput" type="text" placeholder="Ada Lovelace">
+
+          <label for="email-input">Email input</label>
+          <input id="email-input" name="emailInput" type="email" placeholder="ada@example.com">
+
+          <label for="password-input">Password input</label>
+          <input id="password-input" name="passwordInput" type="password" placeholder="password">
+
+          <label for="search-input">Search input</label>
+          <input id="search-input" name="searchInput" type="search" placeholder="Search...">
+
+          <label for="tel-input">Telephone input</label>
+          <input id="tel-input" name="telInput" type="tel" placeholder="555-555-5555">
+
+          <label for="url-input">URL input</label>
+          <input id="url-input" name="urlInput" type="url" placeholder="https://example.com">
+        </fieldset>
+
+        <fieldset>
+          <legend>Number and date/time inputs</legend>
+
+          <!--
+            Some input types give the browser extra information.
+            For example, type="number" can use min and max,
+            while date/time inputs may show a browser-provided picker.
+          -->
+
+          <label for="number-input">Number input</label>
+          <input id="number-input" name="numberInput" type="number" min="1" max="10" value="5">
+
+          <label for="range-input">Range input</label>
+          <input id="range-input" name="rangeInput" type="range" min="0" max="100" value="50">
+
+          <label for="date-input">Date input</label>
+          <input id="date-input" name="dateInput" type="date">
+
+          <label for="time-input">Time input</label>
+          <input id="time-input" name="timeInput" type="time">
+
+          <label for="datetime-input">Datetime-local input</label>
+          <input id="datetime-input" name="datetimeInput" type="datetime-local">
+
+          <label for="month-input">Month input</label>
+          <input id="month-input" name="monthInput" type="month">
+
+          <label for="week-input">Week input</label>
+          <input id="week-input" name="weekInput" type="week">
+        </fieldset>
+
+        <fieldset>
+          <legend>Choice inputs</legend>
+
+          <!--
+            A checkbox is good for a yes/no or true/false choice.
+            JavaScript can later read checkbox.checked to see whether it is checked.
+          -->
+          <label for="checkbox-input">
+            <input id="checkbox-input" name="isComplete" type="checkbox" value="yes">
+            Checkbox: mark task complete
+          </label>
+
+          <!--
+            Radio buttons are good when the user should pick one option from a group.
+            Radio buttons belong to the same group when they share the same name.
+          -->
+          <p>Radio buttons: choose one difficulty</p>
+          <label for="easy-radio">
+            <input id="easy-radio" name="difficulty" type="radio" value="easy">
+            Easy
+          </label>
+
+          <label for="medium-radio">
+            <input id="medium-radio" name="difficulty" type="radio" value="medium">
+            Medium
+          </label>
+
+          <label for="hard-radio">
+            <input id="hard-radio" name="difficulty" type="radio" value="hard">
+            Hard
+          </label>
+
+          <!--
+            select creates a dropdown menu.
+            option creates each choice inside the dropdown.
+          -->
+          <label for="select-input">Select dropdown</label>
+          <select id="select-input" name="favoriteLanguage">
+            <option value="">Choose one</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Other useful inputs</legend>
+
+          <label for="color-input">Color input</label>
+          <input id="color-input" name="colorInput" type="color" value="#0000ff">
+
+          <label for="file-input">File input</label>
+          <input id="file-input" name="fileInput" type="file">
+
+          <!--
+            textarea is for longer text.
+            Unlike input, textarea has an opening and closing tag.
+          -->
+          <label for="textarea-input">Textarea</label>
+          <textarea id="textarea-input" name="message" rows="4" placeholder="Write a longer message here..."></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Buttons</legend>
+
+          <!--
+            type="submit" submits the form.
+            type="reset" resets the form fields.
+            type="button" does not have built-in form behavior. It is commonly used with JavaScript.
+          -->
+          <button type="submit">Submit button</button>
+          <button type="reset">Reset button</button>
+          <button type="button">Plain button</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section>
+      <h2>8. Generic containers</h2>
+
+      <!--
+        div is a generic block-level container.
+        span is a generic inline container.
+
+        Use semantic tags when a tag clearly matches the meaning of the content.
+        Use div or span when you only need a generic wrapper for styling or JavaScript.
+      -->
+
+      <div>
+        <p>This paragraph is inside a div.</p>
+        <p>This sentence has a <span>span around these words</span>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>End of HTML walkthrough.</p>
+  </footer>
+</body>
+</html>
