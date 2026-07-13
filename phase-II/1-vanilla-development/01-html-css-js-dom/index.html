@@ -20,7 +20,7 @@
     This link connects the external CSS file to this HTML document.
     The path starts from the current folder and enters the assets folder.
   -->
-  <link rel="stylesheet" href="./assests/style.css">
+  <link rel="stylesheet" href="./assests/styles.css">
 
   <!--
     This script connects the external JavaScript file.
@@ -29,7 +29,8 @@
     before running the JavaScript. This allows JavaScript to safely
     select and modify elements on the page.
   -->
-
+  <script src="./assests/main.js" defer></script>
+  
   <title>Dakota Vanilla Dev</title>
 
   <!--
@@ -264,12 +265,14 @@
         <label for="newsletter-input">
           <!--
             This checkbox uses "yes" as its submitted value when checked.
+            To cehck the box in html you can checked="checked" to start as a checked box
           -->
           <input
             id="newsletter-input"
             name="wantsNewsletter"
             type="checkbox"
             value="yes"
+            checked="checked"
           >
           Send me updates
         </label>
@@ -338,6 +341,7 @@
     -->
     <p>Code Platoon &copy; 2026</p>
   </footer>
+  
 </body>
 </html>
 
