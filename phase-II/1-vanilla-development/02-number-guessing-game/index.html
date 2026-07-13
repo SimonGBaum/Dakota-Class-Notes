@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/main.css">
+  <script src="./assets/main.js" defer></script>
+  <title>Number Guessing Game</title>
+</head>
+<body>
+
+  <main class="game-card">
+    <h1>Number Guessing Game</h1>
+
+    <p>
+      I am thinking of a number from <strong>1 to 10</strong>.
+      Try to guess it.
+    </p>
+
+    <form id="guess-form">
+      <label for="guess-input">Your guess</label>
+      <input id="guess-input" name="guess" type="number" min="1" max="10" required>
+      <button type="submit">Guess</button>
+    </form>
+
+    <p id="message" class="message">Enter a number and submit your guess.</p>
+    <p id="attempts">Attempts: 0</p>
+
+    <button id="reset-button" type="button">Reset game</button>
+  </main>
+</body>
+</html>

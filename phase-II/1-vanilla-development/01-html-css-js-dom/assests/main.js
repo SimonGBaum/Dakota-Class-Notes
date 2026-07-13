@@ -5,7 +5,9 @@ const statusMessage = document.querySelector("#status-message")
 const changeTitleButton = document.querySelector("#change-title-button")
 const userForm = document.querySelector("#user-form")
 const formOutput = document.querySelector("#form-output")
-
+const dynamicContainer = document.querySelector("#dynamic-container")
+const addBoxButton = document.querySelector("#add-box-button")
+const removeBoxButton = document.querySelector("#remove-box-button")
 
 console.log("Selected Element", pageTitle)
 
@@ -32,3 +34,27 @@ const handleFormSubmit=(event)=>{
 }
 
 userForm.addEventListener("submit", handleFormSubmit);
+
+
+const addDemoDiv=()=>{
+    const demoDiv = document.createElement("div");
+    demoDiv.innerText= "I was created by JavaScript";
+    demoDiv.className = "demo-box";
+    dynamicContainer.appendChild(demoDiv);
+    statusMessage.innerText="JavaScript created a new div and appended it to the page."
+}
+
+addBoxButton.addEventListener("click", addDemoDiv)
+
+const removeDemoDiv=()=>{
+    const lastBox = dynamicContainer.lastElementChild
+    console.log(lastBox)
+    if (lastBox === null){
+        statusMessage.innerText = "There is no div to remove"
+        return;
+    }
+    lastBox.remove();
+    statusMessage.innerText = "JS removed a div from the page."
+}
+removeBoxButton.addEventListener("click", removeDemoDiv)
+
