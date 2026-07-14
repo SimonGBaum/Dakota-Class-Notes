@@ -23,7 +23,8 @@
 - DONT WORRY ABOUT HOOKS YET
 
 ## Part II
-
+- Running React 
+  - within Docker
 - Why requests
 - What is async
 - installing axios
