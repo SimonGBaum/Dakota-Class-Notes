@@ -1,6 +1,6 @@
 import axios from 'axios'
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 function App() {
 
 
@@ -25,6 +25,37 @@ function App() {
   const [count, setCount] = useState(0)
   const [pokemonName, setPokemonName] = useState("")
   const [pokemonList, setPokemonList] = useState([])
+
+  useEffect(
+    ()=>{
+      console.log("page mounted")
+      return ()=>{console.log("page unmounted")}
+    },[]
+  )
+
+  useEffect(()=>{
+    console.log("heading changed")
+    console.log(heading)
+    },[heading]
+  )
+
+  useEffect(
+    ()=>{
+      console.log("pokemon list has changed (or ths is the first mount)")
+      console.log(pokemonList)
+    },[pokemonList]
+  )
+
+  useEffect(
+    ()=>{
+      console.log("count changed")
+      const colors = ["lightblue","lightgreen","lightpink","lightyellow","lightseagreen","lightsalmon"]
+      const randomIndex = Math.floor(Math.random()*colors.length)
+      document.body.style.backgroundColor = colors[randomIndex]
+    },
+    [count]
+  )
+
 
   const addToCount=()=>{
     setCount(count + 1)
@@ -55,6 +86,16 @@ function App() {
 
   }
 
+  useEffect(
+   ()=>{
+        const getStartingPokemon=async ()=>{
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon/pikachu")
+        setPokemonList([response.data])
+        }
+      getStartingPokemon();
+    }
+    ,[]
+  )
   // const generateCard=(data)=>{
   //   let container = document.querySelector("#container")
   //   let div = document.createElement("div")
@@ -71,13 +112,14 @@ function App() {
   const handleSubmit=(event)=>{
     event.preventDefault()
     getPokemonData()
+    setPokemonName("")
 
   }
 
   return (
     <>
       <h1>{heading}</h1>
-      <button onClick={ ()=>{setHeading(heading + " Part 2")} }>Change Title</button>
+      <button onClick={ ()=>{setHeading("Dakota:Pokemon Project Part 2")} }>Change Title</button>
       <hr/>
       <h3>Total Clicks {count}</h3>
       <button onClick={ addToCount }>Click me!!</button>
