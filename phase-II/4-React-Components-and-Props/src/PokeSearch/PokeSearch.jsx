@@ -59,7 +59,10 @@ export default function PokeSearch() {
   return (
     <>
         <PokeForm handleSubmit={handleSubmit} setPokemonName={setPokemonName} pokemonName={pokemonName}/>
-        <PokeContainer pokemonList={pokemonList} rmData={rmData}/>
+        <PokeContainer
+          pokemonList={pokemonList} 
+          rmData={rmData} 
+          />
     </>
   )
 }

@@ -9,6 +9,8 @@
   - accessing props
 - Lifting State up
   -What is is and how to do it
+- Component as modules
+- using CSS modules for CSS spec.
 - what are Children
   - passing and receiving children
 

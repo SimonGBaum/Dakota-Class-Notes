@@ -1,3 +1,5 @@
+import Button from "../Button"
+
 export default function PokeForm({handleSubmit, setPokemonName, pokemonName}) {
   return (
     <form onSubmit={(event)=>handleSubmit(event)}>
@@ -8,7 +10,7 @@ export default function PokeForm({handleSubmit, setPokemonName, pokemonName}) {
           value={pokemonName}
           onChange={(e)=>{setPokemonName(e.target.value)}}
           />
-        <input type="submit" value="Search"/>
+        <Button type="submit">Catch 'em</Button>
     </form>
   )
 }
