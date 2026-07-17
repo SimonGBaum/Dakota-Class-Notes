@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual rem Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Visualizing rem</h1>
+
+    <p class="root-note">
+      Root font size: <code>html { font-size: 16px; }</code>
+    </p>
+
+    <section class="text-reference">
+      <p class="one-rem-text">This text is 1rem tall.</p>
+      <div class="baseline"></div>
+    </section>
+
+    <section class="examples">
+      <article>
+        <h2>1rem × 1rem</h2>
+        <div class="box box-1"></div>
+      </article>
+
+      <article>
+        <h2>2rem × 2rem</h2>
+        <div class="box box-2"></div>
+      </article>
+
+      <article>
+        <h2>4rem × 4rem</h2>
+        <div class="box box-4"></div>
+      </article>
+
+      <article>
+        <h2>8rem × 8rem</h2>
+        <div class="box box-8"></div>
+      </article>
+    </section>
+
+    <section class="comparison">
+      <h2>Direct comparison</h2>
+
+      <div class="row">
+        <span class="sample-letter">M</span>
+        <div class="bar bar-1"></div>
+        <span>1rem</span>
+      </div>
+
+      <div class="row">
+        <span class="sample-letter">M</span>
+        <div class="bar bar-2"></div>
+        <span>2rem</span>
+      </div>
+
+      <div class="row">
+        <span class="sample-letter">M</span>
+        <div class="bar bar-4"></div>
+        <span>4rem</span>
+      </div>
+    </section>
+
+    <section class="experiment">
+      <h2>Change one number</h2>
+      <p>
+        In <code>styles.css</code>, change the root font size from
+        <code>16px</code> to <code>24px</code>.
+      </p>
+      <p>Every box and bar will grow because they are sized with rem.</p>
+    </section>
+  </main>
+</body>
+</html>

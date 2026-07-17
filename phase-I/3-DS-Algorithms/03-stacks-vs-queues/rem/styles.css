@@ -1,0 +1,144 @@
+/*
+  Change this value during the demo.
+
+  At 16px:
+  1rem = 16px
+
+  At 24px:
+  1rem = 24px
+*/
+html {
+  font-size: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: white;
+}
+
+main {
+  width: 50rem;
+  margin: 2rem auto;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.root-note {
+  font-size: 1rem;
+}
+
+.text-reference {
+  margin: 3rem 0;
+}
+
+.one-rem-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.baseline {
+  width: 20rem;
+  height: 1rem;
+  border: 2px solid #222;
+  background: #eee;
+}
+
+.examples {
+  display: flex;
+  align-items: end;
+  gap: 3rem;
+  margin: 4rem 0;
+}
+
+.examples article {
+  text-align: center;
+}
+
+.examples h2 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.box {
+  border: 2px solid #222;
+  background: #ddd;
+}
+
+.box-1 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.box-2 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.box-4 {
+  width: 4rem;
+  height: 4rem;
+}
+
+.box-8 {
+  width: 8rem;
+  height: 8rem;
+}
+
+.comparison {
+  margin-top: 4rem;
+}
+
+.comparison h2,
+.experiment h2 {
+  font-size: 1.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.sample-letter {
+  width: 2rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+
+.bar {
+  height: 1rem;
+  border: 2px solid #222;
+  background: #bbb;
+}
+
+.bar-1 {
+  width: 1rem;
+}
+
+.bar-2 {
+  width: 2rem;
+}
+
+.bar-4 {
+  width: 4rem;
+}
+
+.experiment {
+  margin-top: 4rem;
+  border-top: 2px solid #222;
+}
+
+code {
+  font-family: monospace;
+}
