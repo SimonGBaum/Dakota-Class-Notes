@@ -1,0 +1,170 @@
+## The Three React Router Modes
+
+React Router has three modes. Each mode includes the features of the mode before it.
+
+### 1. Declarative Mode
+
+Declarative Mode is the simplest way to use React Router.
+
+Routes are written as JSX using components such as:
+
+```jsx
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/about" element={<AboutPage />} />
+  </Routes>
+</BrowserRouter>
+```
+
+Use Declarative Mode when:
+
+* You only need basic page navigation.
+* Your application is small or simple.
+* You want to introduce routing with the least additional setup.
+
+It supports common features such as:
+
+* `<Link>`
+* `<NavLink>`
+* `<Outlet>`
+* `useNavigate`
+* `useParams`
+* `useOutletContext`
+
+Declarative Mode is a good starting point, but it does not provide React Router’s route-level data-loading and form-action features.
+
+---
+
+### 2. Data Mode
+
+Data Mode defines routes as JavaScript objects using `createBrowserRouter`, then renders the router with `RouterProvider`.
+
+```jsx
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
+      },
+    ],
+  },
+]);
+```
+
+```jsx
+<RouterProvider router={router} />
+```
+
+Data Mode supports everything in Declarative Mode, but also supports route-level features such as:
+
+* `loader` functions for retrieving data
+* `action` functions for changing data
+* Route error handling
+* Pending navigation states
+* Automatic data revalidation
+* React Router’s `<Form>` and `useFetcher`
+
+Use Data Mode when:
+
+* You are building a larger single-page React application.
+* Routes may eventually load or submit data.
+* You want more control over navigation and error handling.
+* You want React Router’s advanced features without adopting its complete framework structure.
+
+### Why we chose Data Mode
+
+We chose Data Mode because it gives us a clear route configuration while leaving room for the project to grow.
+
+We can still use familiar hooks such as:
+
+```jsx
+useParams();
+useNavigate();
+useOutletContext();
+```
+
+For example, `useParams` can read a dynamic value from a URL:
+
+```jsx
+{
+  path: "pokemon/:pokemonName",
+  element: <PokemonDetails />,
+}
+```
+
+```jsx
+const { pokemonName } = useParams();
+```
+
+We can also share state from a parent route with its child routes:
+
+```jsx
+<Outlet context={{ pokemonList, setPokemonList }} />
+```
+
+```jsx
+const { pokemonList, setPokemonList } = useOutletContext();
+```
+
+Those hooks would also work in Declarative Mode. The main reason for choosing Data Mode is that our route-object setup supports advanced features such as loaders, actions, pending states, and route error handling if we need them later.
+
+It gives us more room to grow without requiring the additional structure of Framework Mode.
+
+---
+
+### 3. Framework Mode
+
+Framework Mode turns React Router into a fuller application framework.
+
+Instead of placing all the route definitions directly inside the React application, routes are connected to route module files:
+
+```jsx
+export default [
+  route("about", "./routes/about.jsx"),
+  route("pokemon/:pokemonName", "./routes/pokemon-details.jsx"),
+];
+```
+
+Each route module can contain its component, loader, action, error handling, and other route-related code.
+
+Framework Mode can also provide features such as:
+
+* Route-based code splitting
+* Server-side rendering
+* Static rendering
+* Type-safe route information
+* File-oriented route modules
+* Build and deployment integration
+
+Use Framework Mode when:
+
+* You are building a large production application.
+* You need server-side rendering or static rendering.
+* You want React Router to control more of the application architecture.
+* You want a framework experience similar to Remix or Next.js.
+
+Framework Mode would be more setup than our project currently needs.
+
+---
+
+## Simple Comparison
+
+**Declarative Mode:**
+“I need basic navigation between React components.”
+
+**Data Mode:**
+“I am building a React application whose routes may also load, submit, or manage data.”
+
+**Framework Mode:**
+“I want React Router to provide the structure and tooling for the entire application.”
+
+For our project, Data Mode is the middle ground: more capable than basic Declarative Mode, but not as structured or complex as Framework Mode.
+
