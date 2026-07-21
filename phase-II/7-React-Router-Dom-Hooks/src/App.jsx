@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 
 function App() {
   const [user, setUser ] =useState(null)
+  const [pokemonList, setPokemonList] = useState([])
 
   useEffect(
     ()=>{console.log(user)}, [user]
@@ -18,15 +19,13 @@ function App() {
     },[]
   )
 
-
-
   return (
     <>
       <NavBar/>
       <main className="min-h-screen bg-slate-100 p-8">
         <div className="mx-auto max-w-5xl space-y-8 ">
           <Heading/>
-          <Outlet/>
+          <Outlet context={ {pokemonList, setPokemonList} }/>
           <button onClick={()=>{setUser("Neil Patrick Harris")}}>
             Set user
           </button>

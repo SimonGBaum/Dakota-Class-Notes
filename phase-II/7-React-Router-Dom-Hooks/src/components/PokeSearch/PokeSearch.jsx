@@ -2,20 +2,23 @@ import axios from "axios";
 import PokeContainer from "./PokeContainer";
 import PokeForm from "./PokeForm";
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function PokeSearch() {
   const [pokemonName, setPokemonName] = useState("")
-  const [pokemonList, setPokemonList] = useState([])
+  const {pokemonList, setPokemonList} = useOutletContext()
+
 
  useEffect(
    ()=>{
+        if (pokemonList.length > 0) return
         const getStartingPokemon=async ()=>{
         const response = await axios.get("https://pokeapi.co/api/v2/pokemon/pikachu")
         setPokemonList([response.data])
         }
       getStartingPokemon();
     }
-    ,[]
+    ,[pokemonList.length]
   )
   useEffect(
     ()=>{
