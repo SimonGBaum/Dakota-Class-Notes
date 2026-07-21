@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useOutletContext } from "react-router-dom"
 
 export default function Counter() {
-    const [count, setCount] = useState(0)
+    const {count, setCount} = useOutletContext()
+
 
     useEffect(
     ()=>{
