@@ -10,7 +10,7 @@ export default function PokeCard({pokemon, rmData}) {
 
   const imageSource = shiny ? pokemon.sprites.front_shiny : pokemon.sprites.front_default
   return (
-    <Card style={ {width:"18rem"} }>
+    <Card style={ {width:"18rem"} } id ={ `${pokemon.name}-card` }>
       <Card.Img 
         variant="top"
         src={imageSource}

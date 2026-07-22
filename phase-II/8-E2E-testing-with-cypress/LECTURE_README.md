@@ -10,7 +10,7 @@
 - writing and executing your first test
 
 
-## Part II: Cypress Assertionsgit a
+## Part II: Cypress Assertions
 
 - When to test
 - Analyzing features

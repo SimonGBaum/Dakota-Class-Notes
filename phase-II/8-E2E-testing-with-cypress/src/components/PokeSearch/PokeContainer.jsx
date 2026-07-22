@@ -7,7 +7,8 @@ export default function PokeContainer({pokemonList, rmData}) {
   
   return (
      <div 
-      className="flex flex-wrap items-stretch gap-5"
+     id="poke-container"
+     className="flex flex-wrap items-stretch gap-5"
      >
         {
           pokemonList.map(
