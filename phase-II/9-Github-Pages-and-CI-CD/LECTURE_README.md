@@ -1,44 +1,17 @@
-# Intro to E2E Testing
+# GH PAge CI/CD
 
-## Part I: Cypress & React
+## Part I: GitHub Pages
 
-- Why to test?
-- Types of tests
-  - unit < Integration < E2E
-- why cypress
-- installing cypress
-- writing and executing your first test
+- Understand the difference between Static Sites v Server Side Sites
+- Understand the Difference between HashRouter and BrowserRouter
+- Explain and implement client-side routing strategies compatible with static hosting.
+- Deploy a React + Vite application as a static site using GitHub Pages
 
 
-## Part II: Cypress Assertions
 
-- When to test
-- Analyzing features
-- Testing each Feature
-  - PokemonCard
-    - Create and View a Pokemon Card
-      - by interacting with a form
-      - write input (pokemon name)
-      - by pressing the submit button or pressing "enter" on their keyboard to submit the form
-    - Update each pokemon card to demonstrate a shiny || !shiny
-      - upon a card rendering
-      - a button within the card named 'shiny' is rendered
-      - the user can click said button
-      - update the shiny image from shiny to !shiny and viseversa 
-    - Remove a card from the display
-      - upon a card rendering
-      - a button within the card named 'remove' is rendered
-      - the user can click said button
-      - remove the card from the display and the browser
-    - Redirect to pokemon details for viewer
-      - upon card rendering
-      - a button within the card named 'details' is rendered
-      - upon the user clicking on said button the user will navigate to a page where all details of the pokemon corresponding to the card are displayed
-  
+## Part II: CI/CD with GitHub Actions
 
-
-  - Navigation
-    - / => home
-    - /about => About Page
-    - /pokemon/:id => Pokemon Details
-    - \* => 404 Not Found Page
+- Create GitHub Actions workflows to automate testing with Cypress
+- Enforce CI rules that block merges when tests fail
+- Build and deploy production-ready static assets using automated pipelines
+- Securely authenticate and deploy to GitHub Pages from a CI environment
