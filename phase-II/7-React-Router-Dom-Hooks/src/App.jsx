@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 function App() {
   const [user, setUser ] =useState(null)
   const [pokemonList, setPokemonList] = useState([])
+  const [count, setCount] = useState(0)
 
   useEffect(
     ()=>{console.log(user)}, [user]
