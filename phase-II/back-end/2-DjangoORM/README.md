@@ -17,7 +17,7 @@
         - Psypg3
         - Database configurations
         - Dockerfile
-        - running contianer linked to postgres-container
+        - running container linked to postgres-container
     - Entering the Docker Container
         - makemigrations
         - migrating
