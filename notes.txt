@@ -1,0 +1,4 @@
+git pull      # pulls from school (origin)
+git add .
+git commit -m "..."
+git push      # pushes to your repo (myrepo) only
