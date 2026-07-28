@@ -1,0 +1,3 @@
+This project is deployed on its own repo and has the github workflows set up and GH pages deploy.
+You can find the repo here:
+https://github.com/kabeier/ghpages-cicd
