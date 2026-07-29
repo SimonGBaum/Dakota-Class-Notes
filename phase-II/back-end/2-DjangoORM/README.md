@@ -37,6 +37,7 @@
 1. deactivate current venv
 2. create a new venv
 3. activate the new venv
+  - add to .gitignore
 4. install python dependencies with pip
   - Django
   - Psycopg3
