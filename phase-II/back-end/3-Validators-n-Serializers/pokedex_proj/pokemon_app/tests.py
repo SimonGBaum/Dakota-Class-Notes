@@ -1,3 +1,30 @@
 from django.test import TestCase
-
+from .models import Pokemon
+from django.core.exceptions import ValidationError
 # Create your tests here.
+
+class PokemonTests(TestCase):
+    
+    def test_01_create_a_pokemon(self):
+        pikachu = Pokemon(
+            pokemon_type="Electric",
+            name="Pikachu",
+            description = "Yellow shocking fuzzball"
+        )
+        pikachu.full_clean()
+        pikachu.save()
+        
+        self.assertIsInstance(pikachu, Pokemon)
+        self.assertIsNotNone(pikachu.id)
+        # SELECT COUNT(*) FROM pokemon;
+        self.assertEqual(Pokemon.objects.count(), 1)
+        
+    def test_02_create_a_pokemon_fail(self):
+        pikachu = Pokemon(
+            pokemon_type="electric",
+            name="pikachu",
+            level=-10,
+            description = ""
+        )
+        with self.assertRaises(ValidationError):
+            pikachu.full_clean()
