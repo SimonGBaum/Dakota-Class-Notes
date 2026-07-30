@@ -49,6 +49,11 @@ class Pokemon(models.Model):
         default=False
     )
 
+    moves = models.ManyToManyField(
+        "move_app.Move",
+        related_name="pokemon"
+    )
+
     def __str__(self):
         return f"< Pokemon | {self.name} >"
     
