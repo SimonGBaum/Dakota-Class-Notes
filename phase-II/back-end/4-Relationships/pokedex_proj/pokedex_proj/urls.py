@@ -16,7 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+import math
+
+def hello(request):
+    
+    return HttpResponse("Hello World")
+    # return HttpResponse(f"<pre>{request.headers}</pre>")
+# Function Based View
+# Accept a Request, Params
+# Return Response
+
+def area_square(request, width):
+    return HttpResponse(width**2)
+
+
+def area_circle(request, radius):
+    return HttpResponse(math.pi*(radius**2))
+#/circle
+# math.pi*(radius**2)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', hello),
+    path('square/<int:width>/',area_square),
+    path('circle/<int:radius>/',area_circle)   
 ]
