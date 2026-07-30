@@ -1,15 +1,5 @@
 # Django Model Relationships
 
-**Lesson files**
-
-| File | Purpose |
-|---|---|
-| `instructions.md` | Environment setup for `relationship_proj` (Docker, DB, project scaffold) |
-| `lectureguide.md` | Part I — the three relationship types, built one at a time |
-| `poke-lectureguide.md` | Part II — applying a many-to-many to the Pokedex |
-
----
-
 ## Terminal Learning Objective (TLO)
 
 Given a running Django project connected to a PostgreSQL container, **model and expose relationships between Django models** — selecting the correct relationship field for a given requirement, migrating it, managing the related records through the Django admin and ORM, and serializing the relationship for an API response.
