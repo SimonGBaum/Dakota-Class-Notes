@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.http import HttpResponse
 import math
 
@@ -36,9 +36,15 @@ def area_circle(request, radius):
 #/circle
 # math.pi*(radius**2)
 
+from pokemon_app.views import AllPokemon
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hello),
     path('square/<int:width>/',area_square),
-    path('circle/<int:radius>/',area_circle)   
+    path('circle/<int:radius>/',area_circle),
+    path('api/v1/pokemon/',include("pokemon_app.urls")),
+    path('api/v1/moves/',include("move_app.urls"))   
+   
 ]
