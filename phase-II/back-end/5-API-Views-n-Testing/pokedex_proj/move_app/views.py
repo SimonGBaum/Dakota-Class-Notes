@@ -9,3 +9,9 @@ class AllMoves(APIView):
         moves = Moves.objects.all()
         ser_moves = MoversSerializer(moves, many=True)
         return Response(ser_moves.data)
+
+class AMove(APIView):
+    def get(self, request, move_name):
+        move = Move.objects.get(name = move_name)
+        ser_move=MoveSerializer(move)
+        return Response(ser_move.data)

@@ -28,3 +28,24 @@ class PokemonTests(TestCase):
         )
         with self.assertRaises(ValidationError):
             pikachu.full_clean()
+            
+
+from django.urls import reverse
+from django.test import Client
+import json
+class PokemonEndpointsTests(TestCase):
+
+    fixtures=[
+        'move_data.json',
+        'pokemon_data.json'
+    ]
+    def test_01_get_all_pokemon(self):
+        client = Client()
+        url = reverse('all_pokemon')
+        client_response = client.get(url)
+        repo = json.loads(client_response.content)
+        self.assertEqual(client_response, all_pokemon_response)
+        
+    def test_02_get_a_pokemon(self):
+        client=Client()
+        url=reverse('a_pokemen', )
