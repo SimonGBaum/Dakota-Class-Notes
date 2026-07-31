@@ -45,7 +45,13 @@ urlpatterns = [
     path('', hello),
     path('square/<int:width>/',area_square),
     path('circle/<int:radius>/',area_circle),
+<<<<<<< HEAD
     path('api/v1/pokemon/', include("pokemon_app.urls"))
     path('api/v1/moves/'), include("move_app.urls")
+=======
+    path('api/v1/pokemon/',include("pokemon_app.urls")),
+    path('api/v1/moves/',include("move_app.urls"))   
+   
+>>>>>>> da47ea70e028089d46a6bee1ce3a0aadf75a27e8
 ]
 

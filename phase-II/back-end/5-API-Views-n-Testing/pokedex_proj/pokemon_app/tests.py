@@ -28,24 +28,53 @@ class PokemonTests(TestCase):
         )
         with self.assertRaises(ValidationError):
             pikachu.full_clean()
+<<<<<<< HEAD
             
+=======
+>>>>>>> da47ea70e028089d46a6bee1ce3a0aadf75a27e8
 
 from django.urls import reverse
 from django.test import Client
 import json
+<<<<<<< HEAD
 class PokemonEndpointsTests(TestCase):
 
+=======
+from .test_data import all_pokemon_response, a_pokemon_response
+            
+class PokemonEndpointsTests(TestCase):
+    
+>>>>>>> da47ea70e028089d46a6bee1ce3a0aadf75a27e8
     fixtures=[
         'move_data.json',
         'pokemon_data.json'
     ]
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> da47ea70e028089d46a6bee1ce3a0aadf75a27e8
     def test_01_get_all_pokemon(self):
         client = Client()
         url = reverse('all_pokemon')
         client_response = client.get(url)
+<<<<<<< HEAD
         repo = json.loads(client_response.content)
         self.assertEqual(client_response, all_pokemon_response)
         
     def test_02_get_a_pokemon(self):
         client=Client()
         url=reverse('a_pokemen', )
+=======
+        resp= json.loads(client_response.content)
+        self.assertEqual(resp, all_pokemon_response)
+    
+    def test_02_get_a_pokemon(self):
+        client=Client()
+        # arg=[1] meaning the id of 1 will be passed to the url
+        url=reverse('a_pokemon', args=[1])
+        client_response = client.get(url)
+        resp= json.loads(client_response.content)
+        self.assertEqual(resp,a_pokemon_response)
+        
+>>>>>>> da47ea70e028089d46a6bee1ce3a0aadf75a27e8
