@@ -2,8 +2,8 @@ from .serializers import PokemonSerializer
 from .models import Pokemon
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
-
+from rest_framework import status as s
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 class AllPokemon(APIView):
@@ -21,14 +21,28 @@ class AllPokemon(APIView):
         return Response(ser_poke.data)
 
 class APokemon(APIView):
+    
+    # Not an endpoint, helper function
+    def retrieve_pokemon(self, id):
+        if isinstance(id, int):
+            pokemon=get_object_or_404(Pokemon, id=id)
+        else:
+            pokemon=get_object_or_404(Pokemon, name=id)
+        return pokemon
+                
     def get(self, request, id):
         # Look up the Pokemon by ID
         # SELECT * FROM pokemon WHERE id = id
-        
-        if isinstance(id, int):
-            pokemon=Pokemon.objects.get(id=id)
-        else:
-            pokemon=Pokemon.objects.get(name=id)
+        pokemon = self.retrieve_pokemon(id)           
         ser_pokemon=PokemonSerializer(pokemon)
         return Response(ser_pokemon.data)
+    
+    def put(self, request, id):
+        pokemon = self.retrieve_pokemon(id)           
+        ser_pokemon = PokemonSerializer(pokemon, data=request.data, partial=True)
+        if ser_pokemon.is_valid():
+            ser_pokemon.save()
+            return Response(ser_pokemon.data, status=s.HTTP_200_OK)
+        else:
+            return Response(ser_pokemon.errors, status=s.HTTP_400_BAD_REQUEST)
         

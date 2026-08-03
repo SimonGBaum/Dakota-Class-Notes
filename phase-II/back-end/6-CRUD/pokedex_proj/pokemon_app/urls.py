@@ -14,8 +14,8 @@ class IntOrStrConverter:
     
 register_converter(IntOrStrConverter, 'int_str')
 
-# api/v1/pokemon/:id
+# api/v1/pokemon/:id/
 urlpatterns = [
     path('',AllPokemon.as_view(), name='all_pokemon'),
-    path('<int_str:id>', APokemon.as_view(), name='a_pokemon'),
+    path('<int_str:id>/', APokemon.as_view(), name='a_pokemon'),
 ]
