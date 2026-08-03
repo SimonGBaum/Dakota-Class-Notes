@@ -31,3 +31,28 @@ const updatePokemon = async (idParam)=>{
     console.log(response.status)
 }
 updatePokemon(1)
+
+
+const createPokemon=async()=>{
+    let response = await axios.post(
+        `http://localhost:8000/api/v1/pokemon/${idParam}/`,
+        data
+    )
+    console.log(response.data)
+    console.log(response.status)
+}
+    let data = {
+                "name": "Blastoise",
+                "pokemon_type" : "Water",
+                "is_caught" : true
+    }
+createPokemon(data)
+
+const deletePokemon = async(idParam) => {
+    let response = await.axios.detele(
+        `http://localhost:8000/api/v1/pokemon/${idParam}/`
+    )
+    console.log(response.data)
+    console.log(response.status)
+}
+deletePokemon()

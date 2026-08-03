@@ -19,6 +19,14 @@ class AllPokemon(APIView):
         pokemon = Pokemon.objects.all().order_by("id")
         ser_poke = PokemonSerializer(pokemon, many=True)
         return Response(ser_poke.data)
+    
+    def post(self, request):
+        new_pokemon = PokemonSerializer(data=request.data)
+        if new_pokemon.is_valid():
+            new_pokemon.save()
+            return Response(new_pokemon.data, status=s.HTTP_201_CREATED)
+        else:
+            return Response(new_pokemon.errors, status=s.HTTP_400_BAD_REQUEST)
 
 class APokemon(APIView):
     
@@ -46,3 +54,7 @@ class APokemon(APIView):
         else:
             return Response(ser_pokemon.errors, status=s.HTTP_400_BAD_REQUEST)
         
+    def delete(self, request, id):
+        pokemon = self.retrieve_pokemon(id)
+        pokemon.delete()
+        return Response(None, status=s.HTTP_204_NO_CONTENT)
