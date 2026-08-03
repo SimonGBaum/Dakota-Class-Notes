@@ -1,9 +1,19 @@
 import json
+<<<<<<< HEAD
 from django.urls import reverse
 from django.test import Client, TestCase
 from .test_data import all_pokemon_response, a_pokemon_response
 from .models import Pokemon
 from django.core.exceptions import ValidationError
+=======
+
+from django.core.exceptions import ValidationError
+from django.urls import reverse
+from django.test import Client, TestCase
+
+from .models import Pokemon
+from .test_data import all_pokemon_response, a_pokemon_response
+>>>>>>> 5ade3974762c55be673f8475ad95755be680b39c
 from .serializers import PokemonSerializer
 # Create your tests here.
 
@@ -33,6 +43,10 @@ class PokemonTests(TestCase):
         with self.assertRaises(ValidationError):
             pikachu.full_clean()
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5ade3974762c55be673f8475ad95755be680b39c
             
 class PokemonEndpointsTests(TestCase):
     
@@ -41,7 +55,12 @@ class PokemonEndpointsTests(TestCase):
         'pokemon_data.json'
     ]
     
+<<<<<<< HEAD
     def setUP(self):
+=======
+    # runs before the PokemonEndpointsTests
+    def setUp(self):
+>>>>>>> 5ade3974762c55be673f8475ad95755be680b39c
         self.client = Client()
     
     def test_01_get_all_pokemon(self):
@@ -56,6 +75,7 @@ class PokemonEndpointsTests(TestCase):
         client_response = self.client.get(url)
         resp= json.loads(client_response.content)
         self.assertEqual(resp,a_pokemon_response)
+<<<<<<< HEAD
     
     def test_03_update_a_pokemon(self):
         url = reverse('a_pokemon', args=[1])
@@ -63,6 +83,15 @@ class PokemonEndpointsTests(TestCase):
             url, 
             data={
             "is_caught":True
+=======
+        
+    def test_03_update_a_pokemon(self):
+        url = reverse('a_pokemon', args=[1])
+        resp = self.client.put(
+            url,
+            data={
+                "is_caught":True
+>>>>>>> 5ade3974762c55be673f8475ad95755be680b39c
             },
             content_type="application/json"
         )
@@ -78,6 +107,7 @@ class PokemonEndpointsTests(TestCase):
         
     def test_05_create_a_pokemon(self):
         url = reverse('all_pokemon')
+<<<<<<< HEAD
         resp = self.client.post(url, data=
         {
             "name":"Blastoise",
@@ -89,3 +119,16 @@ class PokemonEndpointsTests(TestCase):
         data = json.loads(resp.content)
         last_insertion = PokemonSerializer(Pokemon.objects.last())
         self.assertEqual(data, last_insertion.data)
+=======
+        data={
+                "name":"Blastoise",
+                "pokemon_type":"Water",
+                "is_caught":True
+            }
+        resp = self.client.post(url,data, content="application/json")
+        data = json.loads(resp.content)
+        last_insertion = PokemonSerializer(Pokemon.objects.last())
+        self.assertEqual(data, last_insertion.data)
+        
+        
+>>>>>>> 5ade3974762c55be673f8475ad95755be680b39c
