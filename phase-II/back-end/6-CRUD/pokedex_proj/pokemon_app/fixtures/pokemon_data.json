@@ -1,0 +1,46 @@
+[
+{
+  "model": "pokemon_app.pokemon",
+  "pk": 1,
+  "fields": {
+    "pokemon_type": "Electric",
+    "name": "Pikachu",
+    "level": 5,
+    "description": "Story unknown",
+    "is_caught": false,
+    "moves": [
+      1,
+      4
+    ]
+  }
+},
+{
+  "model": "pokemon_app.pokemon",
+  "pk": 2,
+  "fields": {
+    "pokemon_type": "Fire",
+    "name": "Charmander",
+    "level": 10,
+    "description": "Story unknown",
+    "is_caught": false,
+    "moves": [
+      2
+    ]
+  }
+},
+{
+  "model": "pokemon_app.pokemon",
+  "pk": 3,
+  "fields": {
+    "pokemon_type": "Normal",
+    "name": "Rattata",
+    "level": 5,
+    "description": "It is a rodent you can find everywhere",
+    "is_caught": false,
+    "moves": [
+      1,
+      3
+    ]
+  }
+}
+]
