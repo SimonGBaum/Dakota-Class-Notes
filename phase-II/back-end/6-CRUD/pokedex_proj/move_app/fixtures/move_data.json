@@ -1,0 +1,42 @@
+[
+{
+  "model": "move_app.move",
+  "pk": 1,
+  "fields": {
+    "name": "Tackle",
+    "accuracy": 100,
+    "pp": 30,
+    "power": 40
+  }
+},
+{
+  "model": "move_app.move",
+  "pk": 2,
+  "fields": {
+    "name": "Ember",
+    "accuracy": 100,
+    "pp": 25,
+    "power": 40
+  }
+},
+{
+  "model": "move_app.move",
+  "pk": 3,
+  "fields": {
+    "name": "Water Gun",
+    "accuracy": 100,
+    "pp": 25,
+    "power": 40
+  }
+},
+{
+  "model": "move_app.move",
+  "pk": 4,
+  "fields": {
+    "name": "Vine Whip",
+    "accuracy": 100,
+    "pp": 25,
+    "power": 45
+  }
+}
+]
