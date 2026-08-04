@@ -27,11 +27,8 @@ class AllPokemon(APIView):
             return Response(new_pokemon.data, status=s.HTTP_201_CREATED)
         else:
             return Response(new_pokemon.errors, status=s.HTTP_400_BAD_REQUEST)
-<<<<<<< HEAD
-=======
         
         
->>>>>>> 5ade3974762c55be673f8475ad95755be680b39c
 
 class APokemon(APIView):
     
@@ -58,11 +55,7 @@ class APokemon(APIView):
             return Response(ser_pokemon.data, status=s.HTTP_200_OK)
         else:
             return Response(ser_pokemon.errors, status=s.HTTP_400_BAD_REQUEST)
-<<<<<<< HEAD
-        
-=======
     
->>>>>>> 5ade3974762c55be673f8475ad95755be680b39c
     def delete(self, request, id):
         pokemon = self.retrieve_pokemon(id)
         pokemon.delete()

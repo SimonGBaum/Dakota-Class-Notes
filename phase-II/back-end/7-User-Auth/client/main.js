@@ -4,49 +4,18 @@ import axios from 'axios';
 //    Auth
 // ===========
 
-<<<<<<< HEAD
-// ==============  
-//     Auth
-// ==============  
-
-const loginUser=async()=>{
-    let response = await axios.post(
-        "http://localhost:8000/api/v1/trainers/login/",
-        {
-            "email": "simon.b.baum.com",
-            "password": "1234qwer"
-=======
 const loginUser=async()=>{
     let response= await axios.post(
         "http://localhost:8000/api/v1/trainers/login/",
         {
             "email":"kb@kb.com",
             "password":"1234abcd"
->>>>>>> 99357be788f5948066768fcbeae4b559b9ed07c4
         }
     )
     console.log(response.data)
 }
 
 
-<<<<<<< HEAD
-const registerUser = async() => {
-    let response = await axios.post(
-        "http://localhost:8000/api/v1/trainers/",
-        {
-            "email": "simon.b.baum.com",
-            "password": "1234qwer"
-        }
-    )
-}
-
-
-
-
-// ==============  
-//     CRUD
-// ==============    
-=======
 const registerUser = async()=>{
     let response = await axios.post(
         "http://localhost:8000/api/v1/trainers/register/",
@@ -66,7 +35,6 @@ const registerUser = async()=>{
 // ===========
 //    CRUD
 // ===========
->>>>>>> 99357be788f5948066768fcbeae4b559b9ed07c4
 const getAllPokemon = async ()=>{
     let response = await axios.get(
         "http://localhost:8000/api/v1/pokemon"
