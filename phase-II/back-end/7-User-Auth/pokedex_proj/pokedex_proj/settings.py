@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'pokemon_app',
-    'move_app'
+    'move_app',
+    'trainer_app'
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,8 @@ DATABASES = {
     }
 }
 
+
+AUTH_USER_MODEL='trainer_app.Trainer'
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators

@@ -1,6 +1,40 @@
 import axios from 'axios';
 
+// ===========
+//    Auth
+// ===========
 
+const loginUser=async()=>{
+    let response= await axios.post(
+        "http://localhost:8000/api/v1/trainers/login/",
+        {
+            "email":"kb@kb.com",
+            "password":"1234abcd"
+        }
+    )
+    console.log(response.data)
+}
+
+
+const registerUser = async()=>{
+    let response = await axios.post(
+        "http://localhost:8000/api/v1/trainers/register/",
+        {
+            "email":"kb@kb.com",
+            "password":"1234abcd"
+        }
+    )
+}
+// loginUser()
+// {
+//     email,
+//     token
+// }
+
+
+// ===========
+//    CRUD
+// ===========
 const getAllPokemon = async ()=>{
     let response = await axios.get(
         "http://localhost:8000/api/v1/pokemon"
@@ -57,4 +91,4 @@ const deletePokemon = async(idParam)=>{
     console.log(response.data)
     console.log(response.status)
 }
-deletePokemon(6)
+// deletePokemon(6)
