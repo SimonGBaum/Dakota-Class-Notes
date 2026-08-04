@@ -47,8 +47,12 @@ class LoginView(APIView):
             status=s.HTTP_200_OK
         )
 from rest_framework.permissions import IsAuthenticated
-class LogOutView(APIView):
+
+
+class UserView(APIView):
     permission_classes = [IsAuthenticated]
+
+class LogOutView(UserView):
 
     def post(self, request):
         user_email = request.data.get("email")
@@ -56,3 +60,8 @@ class LogOutView(APIView):
         return Response(f"{user_email} has been logged out")
 
     
+class InfoView(UserView):
+    
+    def get(self, request):
+        user = request.user
+        return Response({"email":user.email, "date_joined": user.date_joined})

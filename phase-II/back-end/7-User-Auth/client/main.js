@@ -45,9 +45,21 @@ const logOutUser = async () =>{
     )
     console.log(response.data)
 }
-logOutUser()
+// logOutUser()
 
+const getInfo = async ()=>{
+    const response = await axios.get(
+        "http://localhost:8000/api/v1/trainers/",
+        {
+            headers:{
+                Authorization: "Token fbdc255c00d6c39a103f327c47bb7bf75878c088"
+            }
+        } 
+    )
+    console.log(response.data)
+}
 
+// getInfo()
 
 // ===========
 //    CRUD
@@ -76,6 +88,11 @@ const updatePokemon = async (idParam)=>{
         {
             "is_caught":true,
             "description": "This is a yellow furry lightening ball thing"
+        },
+        {
+            headers:{
+                Authorization: "Token fbdc255c00d6c39a103f327c47bb7bf75878c088"
+            } 
         }
     )
     console.log(response.data)
@@ -83,12 +100,16 @@ const updatePokemon = async (idParam)=>{
 }
 // updatePokemon(1)
 
-
+let headers = {
+            headers:{
+                Authorization: "Token fbdc255c00d6c39a103f327c47bb7bf75878c088"
+            } 
+        }
 const createPokemon=async(data)=>{
     let response = await axios.post(
         `http://localhost:8000/api/v1/pokemon/`,
-        data
-     
+        data,
+        headers
     )
     console.log(response.data)
     console.log(response.status)
@@ -103,9 +124,10 @@ let data=   {
 
 const deletePokemon = async(idParam)=>{
     let response = await axios.delete(
-        `http://localhost:8000/api/v1/pokemon/${idParam}/`
+        `http://localhost:8000/api/v1/pokemon/${idParam}/`,
+        headers
     )
     console.log(response.data)
     console.log(response.status)
 }
-// deletePokemon(6)
+// deletePokemon(4)

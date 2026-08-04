@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status as s
 from django.shortcuts import get_object_or_404
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 # Create your views here.
 
 class AllPokemon(APIView):
@@ -11,6 +12,11 @@ class AllPokemon(APIView):
     # axios.post => def post()
     # axios.put => def put()
     # axios.delete => def delete()
+    
+    
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    
+    
     def get(self, request):
         # Get all the pokemon from the db
         # Serialize the pokemoen
@@ -31,6 +37,8 @@ class AllPokemon(APIView):
         
 
 class APokemon(APIView):
+    
+    permission_classes = [IsAuthenticatedOrReadOnly]
     
     # Not an endpoint, helper function
     def retrieve_pokemon(self, id):
