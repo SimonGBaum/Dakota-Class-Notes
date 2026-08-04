@@ -46,6 +46,6 @@ urlpatterns = [
     path('circle/<int:radius>/',area_circle),
     path('api/v1/pokemon/',include("pokemon_app.urls")),
     path('api/v1/moves/',include("move_app.urls")), 
-    path('/api/v1/trainers/', include("trainer_app.urls"))
+    path('api/v1/trainers/', include("trainer_app.urls"))
    
 ]

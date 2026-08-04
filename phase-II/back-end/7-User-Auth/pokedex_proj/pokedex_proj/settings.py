@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'pokemon_app',
     'move_app',
-    'trainer_app'
+    'trainer_app',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -87,6 +88,11 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}
 
 AUTH_USER_MODEL='trainer_app.Trainer'
 
