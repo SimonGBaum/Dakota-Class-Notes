@@ -14,7 +14,11 @@ const loginUser=async()=>{
     )
     console.log(response.data)
 }
-
+// loginUser()
+// {
+//     email,
+//     token
+// }
 
 const registerUser = async()=>{
     let response = await axios.post(
@@ -22,14 +26,27 @@ const registerUser = async()=>{
         {
             "email":"kb@kb.com",
             "password":"1234abcd"
+        }    
+    )
+    console.log(response.data)    
+}    
+
+// registerUser()
+
+const logOutUser = async () =>{
+    const response = await axios.post(
+        "http://localhost:8000/api/v1/trainers/logout/",
+        null,
+        {
+            headers:{
+                Authorization: "Token f6e3f5f2ab4b95ee924c6cec5b2267b3870b4014"
+            }
         }
     )
+    console.log(response.data)
 }
-// loginUser()
-// {
-//     email,
-//     token
-// }
+logOutUser()
+
 
 
 // ===========

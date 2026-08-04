@@ -11,7 +11,8 @@ class TrainerManager(BaseUserManager):
         )   
         user.set_password(password)
         user.save(using=self._db)
-
+        return user
+    
     def create_superuser(self, email, password=None, **extra_fields):
         extra_fields["is_staff"]=True
         extra_fields["is_superuser"]=True
