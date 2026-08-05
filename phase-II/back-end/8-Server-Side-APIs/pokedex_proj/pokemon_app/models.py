@@ -1,6 +1,6 @@
 from django.db import models
 from django.core import validators as val
-from .validators import title_format_validate
+from .validators import title_format_validate, validate_type
 # Create your models here.
 class Pokemon(models.Model):
     pokemon_type: str = models.CharField(
@@ -9,7 +9,8 @@ class Pokemon(models.Model):
         null=False,
         blank=False,
         validators=[
-            title_format_validate
+            title_format_validate,
+            validate_type
         ]
         #hold title format
     )
