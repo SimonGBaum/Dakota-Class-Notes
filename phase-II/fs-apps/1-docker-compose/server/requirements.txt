@@ -4,5 +4,9 @@ djangorestframework==3.16.1
 psycopg==3.3.2
 psycopg-binary==3.3.2
 sqlparse==0.5.5
+<<<<<<< HEAD
+=======
+
+>>>>>>> 30977c0a2e58ab15c4dce1cb22e928af230caf66
 gunicorn==25.1.0
 packaging==26.0

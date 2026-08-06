@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'task_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'task_db',
-        'USER': 'cp_user',
-        'PASSWORD': 'password',
+        'NAME': os.environ.get('POSTGRES_DB'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': 'postgres-container',
         'PORT': '5432'
     }
