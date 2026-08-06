@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres-container
+    environment:
+      POSTGRES_DB: task_db
+      POSTGRES_USER: cp_user
+      POSTGRES_PASSWORD: password
+    ports:
+      # -"5432:5432" can do this, but if something is running on 5432, it will through an error so use the next option
+      - "5433:5432"
+  
+  backend:
+    build: ./server
+    container_name: django-container
+    command: sh -c "gunicorn task_api.wsgi --bind 0.0.0.0:8000 --reload"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app
+    depends_on:
+      - db
+    
+  nginx:
+    build: ./client
+    container_name: nginx-container
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./client/dist:/usr/share/nginx/html
+    depends_on:
+      - backend
