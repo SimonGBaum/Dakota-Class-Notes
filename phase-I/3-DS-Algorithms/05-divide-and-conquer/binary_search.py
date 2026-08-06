@@ -1,18 +1,14 @@
 def binary_search(arr, target, left, right):
-    # CONQUER: base case
-    # The remaining search area is empty.
+    # base case
     if left > right:
         return False
 
     # DIVIDE: find the middle of the current range.
     mid = (left + right) // 2
 
-    # CONQUER: base case
-    # We found the target.
     if arr[mid] == target:
         return True
 
-    # DIVIDE: choose the left half.
     elif target < arr[mid]:
 
         # CONQUER: recursively search the smaller problem.
